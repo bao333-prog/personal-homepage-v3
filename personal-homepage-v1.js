@@ -2,7 +2,7 @@ const copy = {
   zh: {
     title: 'Bob 鲍明杰 · 个人宇宙',
     'page.home': '首页', 'page.prev': '上一页', 'page.next': '下一页', 'page.announce': '当前页面',
-    'nav.about': '档案', 'nav.projects': '探索', 'nav.timeline': '时间线', 'nav.twin': '数字分身', 'nav.contact': '联系',
+    'nav.about': '档案', 'nav.projects': '探索', 'nav.twin': '数字分身', 'nav.english': '英文课堂', 'nav.ai': 'AI 探索', 'nav.life': '生活坐标', 'nav.notes': '学习笔记', 'nav.contact': '联系',
     signal: '信号在线',
     'hero.tagline': '一名在全英文课堂里适应、提问，<br>并大步走向 AI 的大一新生。',
     'hero.action': '认识我', 'hero.scroll': '向下探索',
@@ -20,7 +20,7 @@ const copy = {
     'projects.title': '正在发生的探索',
     'projects.intro': '只记录真实发生过的过程。完成的公开，进行中的先留在自己的工作台。',
     'projects.homeTitle': '个人宇宙', 'projects.homeDesc': '面向同学、老师与家人的个人主页。从一张静态名片出发，逐步加入真实档案、学习时间线、双语切换与数字分身。',
-    'projects.homeFact': '移动端适配 · 本地问答 · 动效控制', 'projects.homeStatus': 'V2 持续更新', 'projects.open': '查看项目档案',
+    'projects.homeFact': '移动端适配 · 本地问答 · 动效控制', 'projects.homeStatus': 'V3 持续更新', 'projects.open': '查看项目档案',
     'projects.notesTitle': 'AI 工具实践', 'projects.notesDesc': '记录我如何描述需求、测试结果和复盘失败，让“会使用工具”逐渐变成自己的判断力。', 'projects.notesStatus': '学习笔记持续积累',
     'projects.classTitle': '英文课堂复盘', 'projects.classDesc': '整理课堂里没听懂的术语、逻辑链和知识点，再借助 AI 翻译与解释完成第二次吸收。', 'projects.classStatus': '从跟不上到能复述',
     'timeline.title': '把学习留下来，<br>让成长有迹可循。', 'timeline.intro': '这里不等待“完美成果”，只记录真实的起点、行动和下一步。',
@@ -28,12 +28,31 @@ const copy = {
     'timeline.item2Title': '把真实资料放回页面', 'timeline.item2Desc': '补充身份、全英文学习体验、接触 AI 的起点，并重新确认哪些内容适合公开。',
     'timeline.item3Title': 'V2 增加内容与动态', 'timeline.item3Desc': '上线双语切换、成长目标、学习时间线、邮箱入口和更完整的数字分身问答。',
     'timeline.item4Title': '建立计算机知识星图', 'timeline.item4Desc': '从信号传导、路径与协议开始，把零散概念连成能够复述和应用的知识网络。',
-    'twin.title': '建立通讯', 'twin.intro': '它只根据我愿意公开的真实资料回答。问问我为什么开始学 AI、英文课堂最难的是什么，或者大一的目标。',
-    'twin.welcome': '信号已接通。我是 Bob 的数字分身。关于他的学习、AI 起点、目标和兴趣，我都可以回答。',
+    'twin.title': '建立通讯', 'twin.intro': '它只根据我愿意公开的真实资料回答。遇到暂时不会的问题，你可以把问题留给我，等我回复后继续扩充数字分身。',
+    'twin.welcome': '信号已接通。我是 Bob 的数字分身。关于他的学习、AI 起点、目标和兴趣，我都可以回答。', 'twin.source': '本地资料 + 已发布问答',
+    'english.title': '把“没听懂”，<br>变成下一次能复述。', 'english.intro': '这里将记录全英文课堂中的生词、知识链和复盘方法。目前先搭好学习工作流，后续逐步补充真实课堂笔记。',
+    'english.previewTitle': '课前建立词汇坐标', 'english.previewBody': '预览核心术语、章节结构与可能出现的逻辑关系，先降低课堂中的语言负担。',
+    'english.captureTitle': '课堂抓住知识主线', 'english.captureBody': '优先记录老师的论证顺序、关键图示和没听懂的节点，不追求逐字翻译。',
+    'english.reviewTitle': '课后完成第二次吸收', 'english.reviewBody': '用 AI 辅助解释术语，再用自己的语言复述知识点，留下可回看的双语笔记。',
+    'english.next': '下一步：加入真实课程名称、每周复盘和常见术语卡片。',
+    'ai.title': '让想法经过验证，<br>再成为真正的作品。', 'ai.intro': '这里将集中展示 AI 工具实践、原型实验和失败复盘。当前版本先呈现从问题到验证的基本路径。',
+    'ai.questionTitle': '从真实问题开始', 'ai.questionBody': '先说清楚谁遇到了什么困难，以及完成后怎样判断它真的有用。',
+    'ai.prototypeTitle': '快速做出原型', 'ai.prototypeBody': '把需求拆成小步骤，与 AI 协作实现一个能够操作和观察的版本。',
+    'ai.verifyTitle': '测试并记录判断', 'ai.verifyBody': '检查功能、边界和真实使用体验，把失败原因写进下一轮迭代。',
+    'ai.currentLabel': '当前实验', 'ai.currentValue': '个人主页 V3 · 反馈系统 · 移动端体验', 'ai.nextLabel': '后续补充', 'ai.nextValue': '提示词记录、测试证据与项目复盘',
+    'life.title': '屏幕之外，<br>也要保持真实的节奏。', 'life.intro': '学习不是全部。这里会慢慢记录运动、兴趣和校园生活，目前先保留清楚、克制的内容框架。',
+    'life.basketballTitle': '篮球', 'life.basketballBody': '在对抗和配合中重新获得专注，也让长时间学习后的身体重新启动。',
+    'life.badmintonTitle': '羽毛球', 'life.badmintonBody': '用快速移动和即时判断切换思维节奏，保持轻松但持续的运动习惯。',
+    'life.chessTitle': '象棋', 'life.chessBody': '在有限棋盘上练习预判、取舍与耐心，享受安静思考带来的秩序感。',
+    'life.next': '下一步：补充校园片段、运动记录和我愿意公开的生活照片。',
+    'status.building': '框架搭建中', 'status.ready': '可持续补充',
     'question.aiStart': '为什么开始学 AI', 'question.englishClass': '英文课堂最难的事', 'question.goals': '大一的三个目标', 'question.interests': '平时的兴趣',
-    'chat.now': '刚刚', 'chat.label': '输入问题', 'chat.placeholder': '输入一条讯息…', 'chat.ready': '通讯频道就绪', 'chat.searching': '正在搜索本地档案', 'chat.receiving': '正在接收讯息', 'chat.complete': '讯息接收完成',
+    'chat.now': '刚刚', 'chat.label': '输入问题', 'chat.placeholder': '输入一条讯息…', 'chat.ready': '通讯频道就绪', 'chat.searching': '正在搜索公开知识库', 'chat.receiving': '正在接收讯息', 'chat.complete': '讯息接收完成',
+    'chat.unknown': '这个问题暂时不在我的公开知识库里。你愿意把它留给 Bob 吗？他回复并发布后，我下次就能回答。',
+    'chat.leave': '把问题留给 Bob', 'chat.leaving': '正在传送问题…', 'chat.left': '问题已送达。Bob 会在后台看到它，回复并发布后，数字分身就会学会这条答案。',
+    'chat.leaveError': '这次没有送达，请稍后重试。', 'chat.leaveConfig': '留言后台尚未完成配置。', 'chat.leaveAgain': '重新发送',
     'projectDialog.title': '从一张名片，走向一座个人宇宙。', 'projectDialog.summary': '这是我第一次用原生网页技术和 AI 协作完成的持续迭代项目。目标不是制造一个完美人设，而是让同学、老师和家人快速认识真实的我。',
-    'projectDialog.stackLabel': '技术栈', 'projectDialog.audienceLabel': '目标访客', 'projectDialog.audience': '同学 / 老师 / 家人', 'projectDialog.stateLabel': '当前状态', 'projectDialog.state': 'V2 持续迭代',
+    'projectDialog.stackLabel': '技术栈', 'projectDialog.audienceLabel': '目标访客', 'projectDialog.audience': '同学 / 老师 / 家人', 'projectDialog.stateLabel': '当前状态', 'projectDialog.state': 'V3 持续迭代',
     'projectDialog.versionTitle': '版本穿梭', 'projectDialog.v1Title': '先完成一个能用的起点', 'projectDialog.v1Body': '建立基本的个人介绍、兴趣标签和本地数字分身，让页面能够在电脑与手机上正常浏览。',
     'projectDialog.v1One': '单页个人介绍', 'projectDialog.v1Two': '常见问题快捷入口', 'projectDialog.v1Three': '原生技术、本地运行',
     'projectDialog.v2Title': '让内容和表达更像自己', 'projectDialog.v2Body': '重新梳理真实身份和公开边界，加入学习时间线、中英双语、邮箱入口、动态控制与更完整的本地问答。',
@@ -42,15 +61,22 @@ const copy = {
     'projectDialog.decisionTitle': '我的取舍', 'projectDialog.decisionBody': '保留“个人宇宙”主题，用真实内容、克制动画和明确隐私边界取代功能堆叠。',
     'projectDialog.verifyTitle': '如何验证', 'projectDialog.verifyBody': '检查脚本语法、本地资源加载、桌面与手机首屏，以及减少动态设置下的可用性。',
     'projectDialog.rightsLabel': '实现说明', 'projectDialog.rights': '页面与交互由原生 HTML、CSS 和 JavaScript 独立实现，未复制第三方组件源码或素材。', 'projectDialog.back': '返回探索记录',
-    'contact.title': '想聊聊学习、AI，<br>或者一次新的尝试？', 'contact.body': '邮箱是这个版本唯一公开的联系方式。欢迎同学、老师和朋友发来一封有主题的邮件。',
+    'contact.title': '想聊聊学习、AI，<br>或者一次新的尝试？', 'contact.body': '可以通过邮箱联系我，也可以留下关于这个主页的具体反馈。',
     'contact.privacy': '手机号、住址与私人社交账号不在公开范围内。', 'footer.line': '在适应中学习，在学习中创造。',
+    'feedback.open': '留下反馈', 'feedback.title': '告诉我哪里可以更好',
+    'feedback.intro': '指出一个看不懂、不好找或使用不方便的位置。反馈不会公开，只有我能在后台看到。',
+    'feedback.name': '昵称（选填）', 'feedback.namePlaceholder': '怎么称呼你', 'feedback.relation': '你和我的关系', 'feedback.choose': '请选择',
+    'feedback.relation.classmate': '同学', 'feedback.relation.teacher': '老师', 'feedback.relation.family': '家人', 'feedback.relation.friend': '朋友', 'feedback.relation.colleague': '同事', 'feedback.relation.other': '其他', 'feedback.relation.private': '不便透露',
+    'feedback.device': '这条反馈针对', 'feedback.device.desktop': '电脑', 'feedback.device.mobile': '手机', 'feedback.device.tablet': '平板', 'feedback.device.other': '其他',
+    'feedback.message': '反馈内容', 'feedback.messagePlaceholder': '请描述具体页面、位置和体验', 'feedback.ready': '填写完成后即可安全提交。', 'feedback.submit': '发送反馈',
+    'feedback.sending': '正在安全发送，请稍候…', 'feedback.success': '反馈已收到，谢谢你的认真体验。', 'feedback.error': '发送失败，内容已保留，请稍后重试。', 'feedback.config': '后台公开配置尚未填写，暂时无法提交。',
     motionPause: '暂停动态', motionPlay: '播放动态', motionPauseTitle: '暂停宇宙动画', motionPlayTitle: '播放宇宙动画',
     fallback: '这条讯息超出了我目前公开的资料。你可以问我身份、AI 起点、英文课堂、目标、作品、兴趣或联系方式。'
   },
   en: {
     title: 'Bob Bao · Personal Universe',
     'page.home': 'Home', 'page.prev': 'Previous page', 'page.next': 'Next page', 'page.announce': 'Current page',
-    'nav.about': 'Profile', 'nav.projects': 'Exploration', 'nav.timeline': 'Timeline', 'nav.twin': 'Digital Twin', 'nav.contact': 'Contact',
+    'nav.about': 'Profile', 'nav.projects': 'Exploration', 'nav.twin': 'Digital Twin', 'nav.english': 'English Class', 'nav.ai': 'AI Practice', 'nav.life': 'Life', 'nav.notes': 'Study Notes', 'nav.contact': 'Contact',
     signal: 'SIGNAL ONLINE',
     'hero.tagline': 'A freshman adapting, questioning and learning<br>in an English-medium program while embracing AI.',
     'hero.action': 'Meet Bob', 'hero.scroll': 'SCROLL TO EXPLORE',
@@ -68,7 +94,7 @@ const copy = {
     'projects.title': 'Exploration in progress',
     'projects.intro': 'Only real work is recorded here. Finished work is public; unfinished work stays on my own desk.',
     'projects.homeTitle': 'Personal Universe', 'projects.homeDesc': 'A personal site for classmates, teachers and family. It is growing from a static profile into a bilingual space with real context, a learning timeline and a digital twin.',
-    'projects.homeFact': 'Responsive layout · Local Q&A · Motion controls', 'projects.homeStatus': 'V2 growing', 'projects.open': 'Open project archive',
+    'projects.homeFact': 'Responsive layout · Local Q&A · Motion controls', 'projects.homeStatus': 'V3 growing', 'projects.open': 'Open project archive',
     'projects.notesTitle': 'AI Tool Practice', 'projects.notesDesc': 'I record how I frame requests, test results and reflect on failures so that tool use gradually becomes personal judgment.', 'projects.notesStatus': 'Notes in progress',
     'projects.classTitle': 'English Class Review', 'projects.classDesc': 'I revisit unfamiliar terms, reasoning chains and concepts, then use AI translation and explanation for a second pass.', 'projects.classStatus': 'From missing it to retelling it',
     'timeline.title': 'Leave a trail of learning.<br>Make growth visible.', 'timeline.intro': 'This timeline does not wait for perfect results. It records honest starting points, actions and next steps.',
@@ -76,12 +102,31 @@ const copy = {
     'timeline.item2Title': 'Real context returned to the page', 'timeline.item2Desc': 'Added my identity, English-medium learning experience and AI starting point, while checking what should stay private.',
     'timeline.item3Title': 'V2 adds context and motion', 'timeline.item3Desc': 'Added bilingual content, first-year goals, a learning timeline, email access and richer digital-twin answers.',
     'timeline.item4Title': 'Build a computing knowledge map', 'timeline.item4Desc': 'Starting with signal transmission, paths and protocols, I will connect concepts into knowledge I can explain and apply.',
-    'twin.title': 'Open a channel', 'twin.intro': 'It answers only from facts I have chosen to make public. Ask why I started learning AI, what is difficult in class or what I want to achieve this year.',
-    'twin.welcome': 'Signal connected. I am Bob\'s digital twin. Ask me about his studies, AI starting point, goals or interests.',
+    'twin.title': 'Open a channel', 'twin.intro': 'It answers only from facts I have chosen to make public. If it cannot answer yet, you can leave the question for me and help expand the twin after I reply.',
+    'twin.welcome': 'Signal connected. I am Bob\'s digital twin. Ask me about his studies, AI starting point, goals or interests.', 'twin.source': 'LOCAL + PUBLISHED ANSWERS',
+    'english.title': 'Turn “I missed it”<br>into “I can explain it.”', 'english.intro': 'This page will collect vocabulary, reasoning chains and review methods from English-medium classes. The workflow comes first; real class notes will follow.',
+    'english.previewTitle': 'Map vocabulary before class', 'english.previewBody': 'Preview core terms, chapter structure and likely relationships to reduce the language load during class.',
+    'english.captureTitle': 'Catch the main thread in class', 'english.captureBody': 'Record the reasoning order, key diagrams and unclear moments instead of translating every sentence.',
+    'english.reviewTitle': 'Build a second understanding', 'english.reviewBody': 'Use AI to clarify terms, then retell each concept in my own words and save bilingual notes.',
+    'english.next': 'Next: add real course names, weekly reviews and recurring terminology cards.',
+    'ai.title': 'Test an idea<br>before calling it a product.', 'ai.intro': 'This page will collect AI tool practice, prototype experiments and failure reviews. For now, it presents the path from a real question to verification.',
+    'ai.questionTitle': 'Start with a real problem', 'ai.questionBody': 'Define who is struggling, what is difficult and how a useful result will be recognized.',
+    'ai.prototypeTitle': 'Build a small prototype', 'ai.prototypeBody': 'Break the need into steps and collaborate with AI on a version that can be operated and observed.',
+    'ai.verifyTitle': 'Test and record judgment', 'ai.verifyBody': 'Check function, boundaries and actual experience, then carry each failure into the next iteration.',
+    'ai.currentLabel': 'Current experiments', 'ai.currentValue': 'Personal Universe V3 · Feedback system · Mobile experience', 'ai.nextLabel': 'Coming next', 'ai.nextValue': 'Prompt records, test evidence and project reviews',
+    'life.title': 'Beyond the screen,<br>keep a real rhythm.', 'life.intro': 'Learning is not everything. This page will gradually record movement, interests and campus life; for now, it provides a clear and restrained structure.',
+    'life.basketballTitle': 'Basketball', 'life.basketballBody': 'Competition and teamwork restore focus and restart the body after long stretches of study.',
+    'life.badmintonTitle': 'Badminton', 'life.badmintonBody': 'Fast movement and immediate decisions shift my mental rhythm and keep exercise light but consistent.',
+    'life.chessTitle': 'Chinese chess', 'life.chessBody': 'A limited board trains prediction, trade-offs and patience while making quiet thinking enjoyable.',
+    'life.next': 'Next: add campus moments, activity records and life photos I choose to share.',
+    'status.building': 'Structure in progress', 'status.ready': 'Ready to expand',
     'question.aiStart': 'Why did you start AI?', 'question.englishClass': 'Hardest part of class?', 'question.goals': 'Three first-year goals', 'question.interests': 'Interests outside class',
-    'chat.now': 'now', 'chat.label': 'Enter a question', 'chat.placeholder': 'Send a message…', 'chat.ready': 'Communication channel ready', 'chat.searching': 'Searching local archive', 'chat.receiving': 'Receiving transmission', 'chat.complete': 'Transmission complete',
+    'chat.now': 'now', 'chat.label': 'Enter a question', 'chat.placeholder': 'Send a message…', 'chat.ready': 'Communication channel ready', 'chat.searching': 'Searching public knowledge', 'chat.receiving': 'Receiving transmission', 'chat.complete': 'Transmission complete',
+    'chat.unknown': 'That question is not in my public knowledge yet. Would you like to leave it for Bob? After he replies and publishes it, I will be able to answer next time.',
+    'chat.leave': 'Leave this question for Bob', 'chat.leaving': 'Sending question…', 'chat.left': 'Question delivered. Bob can reply in the private dashboard and publish the answer to teach the digital twin.',
+    'chat.leaveError': 'It was not delivered. Please try again later.', 'chat.leaveConfig': 'The question inbox has not been configured yet.', 'chat.leaveAgain': 'Try again',
     'projectDialog.title': 'From a profile card to a personal universe.', 'projectDialog.summary': 'This is my first continuously evolving project built with native web technologies and AI collaboration. Its goal is not to create a perfect persona, but to help classmates, teachers and family meet the real me quickly.',
-    'projectDialog.stackLabel': 'Stack', 'projectDialog.audienceLabel': 'Audience', 'projectDialog.audience': 'Classmates / Teachers / Family', 'projectDialog.stateLabel': 'Status', 'projectDialog.state': 'V2 in progress',
+    'projectDialog.stackLabel': 'Stack', 'projectDialog.audienceLabel': 'Audience', 'projectDialog.audience': 'Classmates / Teachers / Family', 'projectDialog.stateLabel': 'Status', 'projectDialog.state': 'V3 in progress',
     'projectDialog.versionTitle': 'Version voyager', 'projectDialog.v1Title': 'Build a useful starting point first', 'projectDialog.v1Body': 'Established a basic profile, interest tags and a local digital twin so the page could work on both desktop and mobile.',
     'projectDialog.v1One': 'Single-page profile', 'projectDialog.v1Two': 'Suggested question shortcuts', 'projectDialog.v1Three': 'Native stack, local runtime',
     'projectDialog.v2Title': 'Make the content and expression more personal', 'projectDialog.v2Body': 'Reframed my real identity and public boundaries, then added a learning timeline, bilingual content, email access, motion controls and richer local Q&A.',
@@ -90,8 +135,15 @@ const copy = {
     'projectDialog.decisionTitle': 'My decisions', 'projectDialog.decisionBody': 'Keep the Personal Universe theme, then use real content, restrained motion and explicit privacy boundaries instead of adding more features.',
     'projectDialog.verifyTitle': 'How I verified it', 'projectDialog.verifyBody': 'Checked script syntax, local resource loading, desktop and mobile layouts, and usability with reduced motion enabled.',
     'projectDialog.rightsLabel': 'Implementation note', 'projectDialog.rights': 'The page and interactions are independently implemented with native HTML, CSS and JavaScript. No third-party component source or assets were copied.', 'projectDialog.back': 'Return to exploration',
-    'contact.title': 'Want to talk about learning, AI,<br>or a new experiment?', 'contact.body': 'Email is the only contact channel published in this version. Classmates, teachers and friends are welcome to send a message with a clear subject.',
+    'contact.title': 'Want to talk about learning, AI,<br>or a new experiment?', 'contact.body': 'You can reach me by email or leave specific feedback about this site.',
     'contact.privacy': 'My phone number, address and private social accounts are not public.', 'footer.line': 'Adapt, learn, then create.',
+    'feedback.open': 'Leave feedback', 'feedback.title': 'Tell me what could be better',
+    'feedback.intro': 'Point out something unclear, hard to find or inconvenient. Feedback stays private and is visible only to me.',
+    'feedback.name': 'Nickname (optional)', 'feedback.namePlaceholder': 'How should I address you?', 'feedback.relation': 'How you know me', 'feedback.choose': 'Choose one',
+    'feedback.relation.classmate': 'Classmate', 'feedback.relation.teacher': 'Teacher', 'feedback.relation.family': 'Family', 'feedback.relation.friend': 'Friend', 'feedback.relation.colleague': 'Colleague', 'feedback.relation.other': 'Other', 'feedback.relation.private': 'Prefer not to say',
+    'feedback.device': 'This feedback is about', 'feedback.device.desktop': 'Desktop', 'feedback.device.mobile': 'Mobile', 'feedback.device.tablet': 'Tablet', 'feedback.device.other': 'Other',
+    'feedback.message': 'Feedback', 'feedback.messagePlaceholder': 'Describe the page, location and experience', 'feedback.ready': 'Complete the form to submit securely.', 'feedback.submit': 'Send feedback',
+    'feedback.sending': 'Sending securely…', 'feedback.success': 'Feedback received. Thank you for taking a close look.', 'feedback.error': 'Sending failed. Your text is still here; please retry.', 'feedback.config': 'The public backend configuration is not set yet.',
     motionPause: 'Pause motion', motionPlay: 'Play motion', motionPauseTitle: 'Pause universe animation', motionPlayTitle: 'Play universe animation',
     fallback: 'That message is outside the information I currently share. Ask about my identity, AI starting point, classes, goals, public work, interests or contact details.'
   }
@@ -358,13 +410,14 @@ if ('IntersectionObserver' in window) {
   document.querySelectorAll('[data-section-root]').forEach((section) => sectionObserver.observe(section));
 }
 
-const pageOrder = ['home', 'about', 'projects', 'timeline', 'twin', 'contact'];
+const pageOrder = ['home', 'about', 'projects', 'twin', 'english', 'ai', 'life', 'notes', 'contact'];
 const pagePanels = new Map([...document.querySelectorAll('[data-page-id]')].map((panel) => [panel.dataset.pageId, panel]));
 const pageDots = [...document.querySelectorAll('[data-page-target]')];
 const previousPageButton = document.querySelector('[data-page-prev]');
 const nextPageButton = document.querySelector('[data-page-next]');
 const pageCounter = document.querySelector('#page-counter');
 const pageAnnouncer = document.querySelector('#page-announcer');
+const feedbackDialog = document.querySelector('#feedback-dialog');
 const warpTransition = document.querySelector('#warp-transition');
 const warpCanvas = document.querySelector('#warp-canvas');
 const warpContext = warpCanvas.getContext('2d');
@@ -502,14 +555,9 @@ function showPage(nextIndex, announce = true) {
   });
   currentPageIndex = nextIndex;
   window.scrollTo(0, 0);
-  const nextPanel = pagePanels.get(nextId);
-  if (nextPanel && !nextPanel.hasAttribute('tabindex')) nextPanel.setAttribute('tabindex', '-1');
   updatePageControls();
   updateScrollState();
-  window.setTimeout(() => {
-    nextPanel?.classList.remove('page-entering');
-    nextPanel?.focus({ preventScroll: true });
-  }, 300);
+  window.setTimeout(() => pagePanels.get(nextId).classList.remove('page-entering'), 300);
   if (!announce) pageAnnouncer.textContent = '';
 }
 
@@ -536,31 +584,17 @@ function initializePagination() {
   currentPageIndex = pageOrder.indexOf(initialPage);
   document.body.classList.add('paged-mode');
   showPage(currentPageIndex, false);
-  if (location.hash !== `#${initialPage}`) history.replaceState({ page: initialPage }, '', `#${initialPage}`);
   pageDots.forEach((button) => {
     const panel = pagePanels.get(button.dataset.pageTarget);
     if (!panel.id) panel.id = `${button.dataset.pageTarget}-panel`;
     button.setAttribute('aria-controls', panel.id);
     button.addEventListener('click', () => navigateToPage(button.dataset.pageTarget));
-    button.addEventListener('keydown', (event) => {
-      const currentDotIndex = pageDots.indexOf(button);
-      let nextDotIndex = currentDotIndex;
-      if (['ArrowRight', 'ArrowDown'].includes(event.key)) nextDotIndex = (currentDotIndex + 1) % pageDots.length;
-      if (['ArrowLeft', 'ArrowUp'].includes(event.key)) nextDotIndex = (currentDotIndex - 1 + pageDots.length) % pageDots.length;
-      if (event.key === 'Home') nextDotIndex = 0;
-      if (event.key === 'End') nextDotIndex = pageDots.length - 1;
-      if (nextDotIndex === currentDotIndex) return;
-      event.preventDefault();
-      pageDots[nextDotIndex].focus();
-      navigateToPage(pageDots[nextDotIndex].dataset.pageTarget);
-    });
   });
 }
 
 previousPageButton.addEventListener('click', () => navigateToPage(pageOrder[currentPageIndex - 1]));
 nextPageButton.addEventListener('click', () => navigateToPage(pageOrder[currentPageIndex + 1]));
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
-  if (link.classList.contains('skip-link')) return;
   const target = link.getAttribute('href').slice(1);
   if (!pageOrder.includes(target)) return;
   link.addEventListener('click', (event) => {
@@ -570,7 +604,7 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
 });
 
 window.addEventListener('keydown', (event) => {
-  if (projectDialog?.open || event.target.closest('input, textarea, select, [role="tab"], button')) return;
+  if (projectDialog?.open || feedbackDialog?.open || event.target.closest('input, textarea, select, [role="tab"], button')) return;
   if (['PageDown', 'ArrowRight'].includes(event.key) && currentPageIndex < pageOrder.length - 1) {
     event.preventDefault();
     navigateToPage(pageOrder[currentPageIndex + 1]);
@@ -579,18 +613,10 @@ window.addEventListener('keydown', (event) => {
     event.preventDefault();
     navigateToPage(pageOrder[currentPageIndex - 1]);
   }
-  if (event.key === 'Home') {
-    event.preventDefault();
-    navigateToPage(pageOrder[0]);
-  }
-  if (event.key === 'End') {
-    event.preventDefault();
-    navigateToPage(pageOrder[pageOrder.length - 1]);
-  }
 });
 
 window.addEventListener('wheel', (event) => {
-  if (projectDialog?.open || pageTransitioning || Math.abs(event.deltaY) < 24) return;
+  if (projectDialog?.open || feedbackDialog?.open || pageTransitioning || Math.abs(event.deltaY) < 24) return;
   const maxScroll = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
   const atTop = window.scrollY <= 2;
   const atBottom = maxScroll <= 4 || window.scrollY >= maxScroll - 3;
@@ -604,11 +630,11 @@ window.addEventListener('wheel', (event) => {
 }, { passive: false });
 
 window.addEventListener('touchstart', (event) => {
-  if (projectDialog?.open) return;
+  if (projectDialog?.open || feedbackDialog?.open) return;
   touchStartY = event.touches[0].clientY;
 }, { passive: true });
 window.addEventListener('touchend', (event) => {
-  if (touchStartY === null || projectDialog?.open || pageTransitioning) return;
+  if (touchStartY === null || projectDialog?.open || feedbackDialog?.open || pageTransitioning) return;
   const distance = touchStartY - event.changedTouches[0].clientY;
   touchStartY = null;
   if (Math.abs(distance) < 70) return;
@@ -619,15 +645,10 @@ window.addEventListener('touchend', (event) => {
   if (distance < 0 && atTop && currentPageIndex > 0) navigateToPage(pageOrder[currentPageIndex - 1]);
 }, { passive: true });
 
-function syncPageFromLocation() {
+window.addEventListener('popstate', () => {
   const target = location.hash.slice(1);
-  const nextPage = pageOrder.includes(target) ? target : 'home';
-  if (pageOrder[currentPageIndex] === nextPage) return;
-  navigateToPage(nextPage, { skipAnimation: true, history: false });
-}
-
-window.addEventListener('popstate', syncPageFromLocation);
-window.addEventListener('hashchange', syncPageFromLocation);
+  if (pageOrder.includes(target)) navigateToPage(target, { skipAnimation: true, history: false });
+});
 
 document.querySelectorAll('.tilt-card').forEach((card) => {
   card.addEventListener('pointermove', (event) => {
@@ -700,10 +721,192 @@ versionTabs.forEach((tab, index) => {
 });
 setProjectVersion('v2');
 
+const feedbackOpenButton = document.querySelector('#feedback-open');
+const feedbackCloseButton = document.querySelector('#feedback-close');
+const feedbackForm = document.querySelector('#feedback-form');
+const feedbackStatus = document.querySelector('#feedback-status');
+const feedbackSubmitButton = document.querySelector('#feedback-submit');
+let feedbackSubmitting = false;
+
+function syncFeedbackViewport() {
+  const viewport = window.visualViewport;
+  const height = Math.round(viewport ? viewport.height : window.innerHeight);
+  const coveredBottom = viewport ? Math.max(0, Math.round(window.innerHeight - viewport.height - viewport.offsetTop)) : 0;
+  document.documentElement.style.setProperty('--feedback-viewport-height', `${height}px`);
+  document.documentElement.style.setProperty('--feedback-viewport-bottom', `${coveredBottom}px`);
+}
+
+syncFeedbackViewport();
+window.addEventListener('resize', syncFeedbackViewport, { passive: true });
+if (window.visualViewport) {
+  window.visualViewport.addEventListener('resize', syncFeedbackViewport, { passive: true });
+  window.visualViewport.addEventListener('scroll', syncFeedbackViewport, { passive: true });
+}
+
+function setFeedbackState(state) {
+  feedbackStatus.dataset.state = state;
+  feedbackStatus.textContent = copy[currentLanguage][`feedback.${state}`];
+  feedbackSubmitButton.querySelector('span').textContent = copy[currentLanguage][state === 'sending' ? 'feedback.sending' : 'feedback.submit'];
+  feedbackSubmitButton.disabled = state === 'sending';
+}
+
+function openFeedbackDialog() {
+  if (feedbackDialog.open) return;
+  if (feedbackStatus.dataset.state !== 'success') setFeedbackState('ready');
+  syncFeedbackViewport();
+  const selectedDevice = feedbackForm.querySelector('input[name="device"]:checked');
+  if (!selectedDevice && window.matchMedia('(max-width: 640px), (pointer: coarse)').matches) {
+    feedbackForm.querySelector('input[name="device"][value="mobile"]').checked = true;
+  }
+  feedbackDialog.showModal();
+  document.body.classList.add('dialog-open');
+}
+
+function closeFeedbackDialog() {
+  if (!feedbackDialog.open || feedbackSubmitting) return;
+  feedbackDialog.close();
+}
+
+function isPrivilegedKey(key) {
+  if (key.startsWith('sb_secret_')) return true;
+  if (key.split('.').length !== 3) return false;
+  try {
+    const encoded = key.split('.')[1].replace(/-/g, '+').replace(/_/g, '/');
+    const payload = JSON.parse(atob(encoded));
+    return payload.role === 'service_role';
+  } catch (error) {
+    return false;
+  }
+}
+
+function getFeedbackBackend() {
+  const config = window.HOMEPAGE_CONFIG || {};
+  const url = String(config.supabaseUrl || '').trim().replace(/\/+$/, '');
+  const key = String(config.supabasePublishableKey || '').trim();
+  if (!url.startsWith('https://') || !key || isPrivilegedKey(key)) return null;
+  return { url, key };
+}
+
+async function submitFeedback(event) {
+  event.preventDefault();
+  if (feedbackSubmitting) return;
+
+  const formData = new FormData(feedbackForm);
+  if (formData.get('website')) {
+    feedbackForm.reset();
+    setFeedbackState('success');
+    return;
+  }
+
+  const backend = getFeedbackBackend();
+  if (!backend) {
+    setFeedbackState('config');
+    return;
+  }
+
+  const payload = {
+    name: String(formData.get('name') || '').trim() || null,
+    relation: formData.get('relation'),
+    device: formData.get('device'),
+    message: String(formData.get('message') || '').trim(),
+    version: 'V3'
+  };
+  const headers = {
+    apikey: backend.key,
+    Authorization: `Bearer ${backend.key}`,
+    'Content-Type': 'application/json',
+    Prefer: 'return=minimal'
+  };
+
+  feedbackSubmitting = true;
+  setFeedbackState('sending');
+  const controller = new AbortController();
+  const timeout = window.setTimeout(() => controller.abort(), 15000);
+
+  try {
+    const response = await fetch(`${backend.url}/rest/v1/feedback`, {
+      method: 'POST',
+      headers,
+      body: JSON.stringify(payload),
+      signal: controller.signal,
+      credentials: 'omit'
+    });
+    if (!response.ok) throw new Error(`Feedback request failed with status ${response.status}`);
+    feedbackForm.reset();
+    setFeedbackState('success');
+  } catch (error) {
+    console.error('Feedback submission failed:', error.message);
+    setFeedbackState('error');
+  } finally {
+    window.clearTimeout(timeout);
+    feedbackSubmitting = false;
+    if (feedbackStatus.dataset.state !== 'sending') feedbackSubmitButton.disabled = false;
+  }
+}
+
+feedbackOpenButton.addEventListener('click', openFeedbackDialog);
+feedbackCloseButton.addEventListener('click', closeFeedbackDialog);
+feedbackForm.addEventListener('submit', submitFeedback);
+feedbackDialog.addEventListener('click', (event) => {
+  if (event.target === feedbackDialog) closeFeedbackDialog();
+});
+feedbackDialog.addEventListener('cancel', (event) => {
+  if (!feedbackSubmitting) return;
+  event.preventDefault();
+});
+feedbackDialog.addEventListener('close', () => {
+  if (!projectDialog.open) document.body.classList.remove('dialog-open');
+  feedbackOpenButton.focus({ preventScroll: true });
+});
+feedbackDialog.addEventListener('focusin', (event) => {
+  if (!event.target.matches('input, select, textarea')) return;
+  window.setTimeout(() => event.target.scrollIntoView({ block: 'nearest' }), 120);
+});
+setFeedbackState('ready');
+if (new URLSearchParams(window.location.search).has('feedback')) openFeedbackDialog();
+
 const log = document.querySelector('#chat-log');
 const form = document.querySelector('#chat-form');
 const input = document.querySelector('#chat-input');
 const transmissionStatus = document.querySelector('#transmission-status');
+const publishedQuestions = [];
+let publishedQuestionsPromise = null;
+
+function normalizeQuestion(value) {
+  return String(value || '').toLowerCase().replace(/[？?，,。！!：:；;、'"“”‘’()（）\[\]【】\s]/g, '');
+}
+
+function publicApiHeaders(backend, prefer) {
+  const headers = { apikey: backend.key };
+  if (backend.key.startsWith('eyJ')) headers.Authorization = `Bearer ${backend.key}`;
+  if (prefer) headers.Prefer = prefer;
+  return headers;
+}
+
+async function loadPublishedQuestions(force = false) {
+  if (publishedQuestionsPromise && !force) return publishedQuestionsPromise;
+  const backend = getFeedbackBackend();
+  if (!backend) return [];
+
+  publishedQuestionsPromise = (async () => {
+    try {
+      const fields = 'question,answer_zh,answer_en,keywords,updated_at';
+      const endpoint = `${backend.url}/rest/v1/twin_questions?select=${fields}&status=eq.published&order=updated_at.desc&limit=200`;
+      const response = await fetch(endpoint, {
+        headers: publicApiHeaders(backend),
+        credentials: 'omit'
+      });
+      if (!response.ok) throw new Error(`Knowledge request failed with status ${response.status}`);
+      const rows = await response.json();
+      publishedQuestions.splice(0, publishedQuestions.length, ...rows.filter((row) => row.answer_zh || row.answer_en));
+      return publishedQuestions;
+    } catch (error) {
+      console.warn('Published twin knowledge is unavailable:', error.message);
+      return publishedQuestions;
+    }
+  })();
+  return publishedQuestionsPromise;
+}
 
 function addMessage(text, role) {
   const item = document.createElement('div');
@@ -723,7 +926,8 @@ function setTransmissionStatus(key, searching = false) {
   transmissionStatus.classList.toggle('is-searching', searching);
 }
 
-function receiveMessage(text) {
+function receiveMessage(text, onComplete) {
+  input.disabled = true;
   const item = addMessage('', 'twin');
   const message = item.querySelector('p');
   const animateText = !paused && !reducedMotion.matches;
@@ -732,7 +936,7 @@ function receiveMessage(text) {
 
   if (!animateText) {
     message.textContent = text;
-    finishTransmission(item);
+    finishTransmission(item, onComplete);
     return;
   }
 
@@ -747,16 +951,17 @@ function receiveMessage(text) {
       return;
     }
     log.setAttribute('aria-live', 'polite');
-    finishTransmission(item);
+    finishTransmission(item, onComplete);
   };
   revealNext();
 }
 
-function finishTransmission(item) {
+function finishTransmission(item, onComplete) {
   item.classList.remove('is-receiving');
   setTransmissionStatus('chat.complete');
   input.disabled = false;
   input.focus();
+  if (onComplete) onComplete();
   window.setTimeout(() => {
     if (!input.disabled) setTransmissionStatus('chat.ready');
   }, 1400);
@@ -764,20 +969,82 @@ function finishTransmission(item) {
 
 function findAnswer(question, questionId) {
   if (questionId && questionBank[questionId]) return questionBank[questionId][currentLanguage];
-  const normalized = question.toLowerCase().replace(/[？?，,。！!\s]/g, '');
-  const found = Object.values(questionBank).find((item) => item.keywords.some((keyword) => normalized.includes(keyword.replace(/\s/g, '').toLowerCase())));
-  return found ? found[currentLanguage] : copy[currentLanguage].fallback;
+  const normalized = normalizeQuestion(question);
+  if (!normalized) return null;
+  const localAnswer = Object.values(questionBank).find((item) => item.keywords.some((keyword) => normalized.includes(normalizeQuestion(keyword))));
+  if (localAnswer) return localAnswer[currentLanguage];
+
+  const publishedAnswer = publishedQuestions.find((item) => {
+    const terms = [item.question, ...(Array.isArray(item.keywords) ? item.keywords : [])].map(normalizeQuestion).filter(Boolean);
+    return terms.some((term) => normalized.includes(term) || term.includes(normalized));
+  });
+  if (!publishedAnswer) return null;
+  return publishedAnswer[currentLanguage === 'en' ? 'answer_en' : 'answer_zh'] || publishedAnswer.answer_zh || publishedAnswer.answer_en;
 }
 
-function reply(question, questionId) {
+function addQuestionAction(question, failed = false) {
+  const action = document.createElement('div');
+  action.className = 'question-action';
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.dataset.i18n = failed ? 'chat.leaveAgain' : 'chat.leave';
+  button.textContent = copy[currentLanguage][button.dataset.i18n];
+  button.addEventListener('click', () => submitUnknownQuestion(question, action));
+  action.appendChild(button);
+  log.appendChild(action);
+  log.scrollTop = log.scrollHeight;
+}
+
+async function submitUnknownQuestion(question, action) {
+  const backend = getFeedbackBackend();
+  if (!backend) {
+    action.remove();
+    receiveMessage(copy[currentLanguage]['chat.leaveConfig'], () => addQuestionAction(question, true));
+    return;
+  }
+
+  const button = action.querySelector('button');
+  button.disabled = true;
+  button.dataset.i18n = 'chat.leaving';
+  button.textContent = copy[currentLanguage]['chat.leaving'];
+  try {
+    const response = await fetch(`${backend.url}/rest/v1/twin_questions`, {
+      method: 'POST',
+      headers: {
+        ...publicApiHeaders(backend, 'return=minimal'),
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        question: question.trim(),
+        language: currentLanguage,
+        version: 'V3'
+      }),
+      credentials: 'omit'
+    });
+    if (!response.ok) throw new Error(`Question request failed with status ${response.status}`);
+    action.remove();
+    receiveMessage(copy[currentLanguage]['chat.left']);
+  } catch (error) {
+    console.error('Twin question submission failed:', error.message);
+    action.remove();
+    receiveMessage(copy[currentLanguage]['chat.leaveError'], () => addQuestionAction(question, true));
+  }
+}
+
+async function reply(question, questionId) {
   const normalized = question.trim();
   if (!normalized || input.disabled) return;
   addMessage(normalized, 'user');
   input.disabled = true;
   setTransmissionStatus('chat.searching', true);
+  await loadPublishedQuestions();
   const answer = findAnswer(normalized, questionId);
   window.setTimeout(() => {
-    receiveMessage(answer);
+    if (answer) {
+      receiveMessage(answer);
+      return;
+    }
+    receiveMessage(copy[currentLanguage]['chat.unknown'], () => addQuestionAction(normalized));
   }, reducedMotion.matches || paused ? 0 : 420);
 }
 
@@ -791,6 +1058,7 @@ form.addEventListener('submit', (event) => {
 document.querySelectorAll('[data-question-id]').forEach((button) => {
   button.addEventListener('click', () => reply(button.textContent, button.dataset.questionId));
 });
+loadPublishedQuestions();
 
 function setLanguage(language) {
   currentLanguage = language;
@@ -815,95 +1083,12 @@ function setLanguage(language) {
   languageToggle.setAttribute('title', language === 'zh' ? 'Switch to English' : '切换到中文');
   document.querySelector('.dialog-close').setAttribute('aria-label', language === 'zh' ? '关闭项目档案' : 'Close project archive');
   document.querySelector('.dialog-close').setAttribute('title', language === 'zh' ? '关闭' : 'Close');
+  feedbackCloseButton.setAttribute('aria-label', language === 'zh' ? '关闭反馈表单' : 'Close feedback form');
+  feedbackCloseButton.setAttribute('title', language === 'zh' ? '关闭' : 'Close');
+  setFeedbackState(feedbackStatus.dataset.state || 'ready');
   updatePageNavigationLabels();
   setMotion(paused);
   try { localStorage.setItem('bob-homepage-language', language); } catch (error) { /* File previews may disable storage. */ }
-}
-
-// Mini game: click the moving star as many times as possible in 20 seconds.
-const gameArena = document.querySelector('#game-arena');
-const gameTarget = document.querySelector('#game-target');
-const gameStart = document.querySelector('#game-start');
-const gameScore = document.querySelector('#game-score');
-const gameTime = document.querySelector('#game-time');
-const gameBest = document.querySelector('#game-best');
-const gameLevel = document.querySelector('#game-level');
-const gameMessage = document.querySelector('#game-message');
-const gameHint = document.querySelector('#game-hint');
-let gameTimer = null;
-let targetMover = null;
-let gameRunning = false;
-let gameScoreValue = 0;
-let gameTimeValue = 20;
-let gameLevelValue = 1;
-let gameComboValue = 0;
-let gameBestValue = 0;
-try { gameBestValue = Number(localStorage.getItem('bob-star-catcher-best') || 0); } catch (error) { /* Keep the default score. */ }
-if (gameBest) gameBest.textContent = gameBestValue;
-
-function moveGameTarget() {
-  if (!gameArena || !gameTarget) return;
-  const padding = 24;
-  const x = padding + Math.random() * Math.max(1, gameArena.clientWidth - padding * 2);
-  const y = padding + Math.random() * Math.max(1, gameArena.clientHeight - padding * 2);
-  gameTarget.style.left = `${x}px`;
-  gameTarget.style.top = `${y}px`;
-  gameTarget.style.width = `${Math.max(22, 34 - gameLevelValue * 2)}px`;
-  gameTarget.style.height = gameTarget.style.width;
-}
-
-function endGame() {
-  gameRunning = false;
-  window.clearInterval(gameTimer);
-  window.clearInterval(targetMover);
-  gameTarget.hidden = true;
-  gameMessage.hidden = false;
-  gameMessage.textContent = `时间到！本轮得分 ${gameScoreValue}`;
-  gameHint.textContent = `最终等级 ${gameLevelValue} · 最高连击 ${gameComboValue}`;
-  gameStart.textContent = '再玩一次';
-  if (gameScoreValue > gameBestValue) {
-    gameBestValue = gameScoreValue;
-    gameBest.textContent = gameBestValue;
-    try { localStorage.setItem('bob-star-catcher-best', String(gameBestValue)); } catch (error) { /* Ignore file preview storage limits. */ }
-  }
-}
-
-function startGame() {
-  if (!gameArena || !gameTarget || gameRunning) return;
-  gameRunning = true;
-  gameScoreValue = 0;
-  gameTimeValue = 20;
-  gameLevelValue = 1;
-  gameComboValue = 0;
-  gameScore.textContent = gameScoreValue;
-  gameTime.textContent = gameTimeValue;
-  gameLevel.textContent = gameLevelValue;
-  gameHint.textContent = '连续命中可获得连击加分';
-  gameMessage.hidden = true;
-  gameTarget.hidden = false;
-  gameStart.textContent = '游戏进行中…';
-  moveGameTarget();
-  targetMover = window.setInterval(moveGameTarget, 1450);
-  gameTimer = window.setInterval(() => {
-    gameTimeValue -= 1;
-    gameTime.textContent = gameTimeValue;
-    if (gameTimeValue <= 0) endGame();
-  }, 1000);
-}
-
-if (gameStart && gameTarget) {
-  gameStart.addEventListener('click', startGame);
-  gameTarget.addEventListener('click', () => {
-    if (!gameRunning) return;
-    gameComboValue += 1;
-    const comboBonus = gameComboValue >= 5 ? 2 : 1;
-    gameScoreValue += comboBonus;
-    gameLevelValue = Math.min(9, 1 + Math.floor(gameScoreValue / 8));
-    gameScore.textContent = gameScoreValue;
-    gameLevel.textContent = gameLevelValue;
-    gameHint.textContent = gameComboValue >= 5 ? `连击 x${gameComboValue} · 额外 +${comboBonus}` : `连击 x${gameComboValue}`;
-    moveGameTarget();
-  });
 }
 
 languageToggle.addEventListener('click', () => setLanguage(currentLanguage === 'zh' ? 'en' : 'zh'));
