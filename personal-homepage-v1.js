@@ -42,15 +42,8 @@ const copy = {
     'projectDialog.decisionTitle': '我的取舍', 'projectDialog.decisionBody': '保留“个人宇宙”主题，用真实内容、克制动画和明确隐私边界取代功能堆叠。',
     'projectDialog.verifyTitle': '如何验证', 'projectDialog.verifyBody': '检查脚本语法、本地资源加载、桌面与手机首屏，以及减少动态设置下的可用性。',
     'projectDialog.rightsLabel': '实现说明', 'projectDialog.rights': '页面与交互由原生 HTML、CSS 和 JavaScript 独立实现，未复制第三方组件源码或素材。', 'projectDialog.back': '返回探索记录',
-    'contact.title': '想聊聊学习、AI，<br>或者一次新的尝试？', 'contact.body': '可以通过邮箱联系我，也可以留下关于这个主页的具体反馈。',
+    'contact.title': '想聊聊学习、AI，<br>或者一次新的尝试？', 'contact.body': '邮箱是这个版本唯一公开的联系方式。欢迎同学、老师和朋友发来一封有主题的邮件。',
     'contact.privacy': '手机号、住址与私人社交账号不在公开范围内。', 'footer.line': '在适应中学习，在学习中创造。',
-    'feedback.open': '留下反馈', 'feedback.title': '告诉我哪里可以更好',
-    'feedback.intro': '指出一个看不懂、不好找或使用不方便的位置。反馈不会公开，只有我能在后台看到。',
-    'feedback.name': '昵称（选填）', 'feedback.namePlaceholder': '怎么称呼你', 'feedback.relation': '你和我的关系', 'feedback.choose': '请选择',
-    'feedback.relation.classmate': '同学', 'feedback.relation.teacher': '老师', 'feedback.relation.family': '家人', 'feedback.relation.friend': '朋友', 'feedback.relation.colleague': '同事', 'feedback.relation.other': '其他', 'feedback.relation.private': '不便透露',
-    'feedback.device': '这条反馈针对', 'feedback.device.desktop': '电脑', 'feedback.device.mobile': '手机', 'feedback.device.tablet': '平板', 'feedback.device.other': '其他',
-    'feedback.message': '反馈内容', 'feedback.messagePlaceholder': '请描述具体页面、位置和体验', 'feedback.ready': '填写完成后即可安全提交。', 'feedback.submit': '发送反馈',
-    'feedback.sending': '正在安全发送，请稍候…', 'feedback.success': '反馈已收到，谢谢你的认真体验。', 'feedback.error': '发送失败，内容已保留，请稍后重试。', 'feedback.config': '后台公开配置尚未填写，暂时无法提交。',
     motionPause: '暂停动态', motionPlay: '播放动态', motionPauseTitle: '暂停宇宙动画', motionPlayTitle: '播放宇宙动画',
     fallback: '这条讯息超出了我目前公开的资料。你可以问我身份、AI 起点、英文课堂、目标、作品、兴趣或联系方式。'
   },
@@ -97,15 +90,8 @@ const copy = {
     'projectDialog.decisionTitle': 'My decisions', 'projectDialog.decisionBody': 'Keep the Personal Universe theme, then use real content, restrained motion and explicit privacy boundaries instead of adding more features.',
     'projectDialog.verifyTitle': 'How I verified it', 'projectDialog.verifyBody': 'Checked script syntax, local resource loading, desktop and mobile layouts, and usability with reduced motion enabled.',
     'projectDialog.rightsLabel': 'Implementation note', 'projectDialog.rights': 'The page and interactions are independently implemented with native HTML, CSS and JavaScript. No third-party component source or assets were copied.', 'projectDialog.back': 'Return to exploration',
-    'contact.title': 'Want to talk about learning, AI,<br>or a new experiment?', 'contact.body': 'You can reach me by email or leave specific feedback about this site.',
+    'contact.title': 'Want to talk about learning, AI,<br>or a new experiment?', 'contact.body': 'Email is the only contact channel published in this version. Classmates, teachers and friends are welcome to send a message with a clear subject.',
     'contact.privacy': 'My phone number, address and private social accounts are not public.', 'footer.line': 'Adapt, learn, then create.',
-    'feedback.open': 'Leave feedback', 'feedback.title': 'Tell me what could be better',
-    'feedback.intro': 'Point out something unclear, hard to find or inconvenient. Feedback stays private and is visible only to me.',
-    'feedback.name': 'Nickname (optional)', 'feedback.namePlaceholder': 'How should I address you?', 'feedback.relation': 'How you know me', 'feedback.choose': 'Choose one',
-    'feedback.relation.classmate': 'Classmate', 'feedback.relation.teacher': 'Teacher', 'feedback.relation.family': 'Family', 'feedback.relation.friend': 'Friend', 'feedback.relation.colleague': 'Colleague', 'feedback.relation.other': 'Other', 'feedback.relation.private': 'Prefer not to say',
-    'feedback.device': 'This feedback is about', 'feedback.device.desktop': 'Desktop', 'feedback.device.mobile': 'Mobile', 'feedback.device.tablet': 'Tablet', 'feedback.device.other': 'Other',
-    'feedback.message': 'Feedback', 'feedback.messagePlaceholder': 'Describe the page, location and experience', 'feedback.ready': 'Complete the form to submit securely.', 'feedback.submit': 'Send feedback',
-    'feedback.sending': 'Sending securely…', 'feedback.success': 'Feedback received. Thank you for taking a close look.', 'feedback.error': 'Sending failed. Your text is still here; please retry.', 'feedback.config': 'The public backend configuration is not set yet.',
     motionPause: 'Pause motion', motionPlay: 'Play motion', motionPauseTitle: 'Pause universe animation', motionPlayTitle: 'Play universe animation',
     fallback: 'That message is outside the information I currently share. Ask about my identity, AI starting point, classes, goals, public work, interests or contact details.'
   }
@@ -379,7 +365,6 @@ const previousPageButton = document.querySelector('[data-page-prev]');
 const nextPageButton = document.querySelector('[data-page-next]');
 const pageCounter = document.querySelector('#page-counter');
 const pageAnnouncer = document.querySelector('#page-announcer');
-const feedbackDialog = document.querySelector('#feedback-dialog');
 const warpTransition = document.querySelector('#warp-transition');
 const warpCanvas = document.querySelector('#warp-canvas');
 const warpContext = warpCanvas.getContext('2d');
@@ -517,9 +502,14 @@ function showPage(nextIndex, announce = true) {
   });
   currentPageIndex = nextIndex;
   window.scrollTo(0, 0);
+  const nextPanel = pagePanels.get(nextId);
+  if (nextPanel && !nextPanel.hasAttribute('tabindex')) nextPanel.setAttribute('tabindex', '-1');
   updatePageControls();
   updateScrollState();
-  window.setTimeout(() => pagePanels.get(nextId).classList.remove('page-entering'), 300);
+  window.setTimeout(() => {
+    nextPanel?.classList.remove('page-entering');
+    nextPanel?.focus({ preventScroll: true });
+  }, 300);
   if (!announce) pageAnnouncer.textContent = '';
 }
 
@@ -546,17 +536,31 @@ function initializePagination() {
   currentPageIndex = pageOrder.indexOf(initialPage);
   document.body.classList.add('paged-mode');
   showPage(currentPageIndex, false);
+  if (location.hash !== `#${initialPage}`) history.replaceState({ page: initialPage }, '', `#${initialPage}`);
   pageDots.forEach((button) => {
     const panel = pagePanels.get(button.dataset.pageTarget);
     if (!panel.id) panel.id = `${button.dataset.pageTarget}-panel`;
     button.setAttribute('aria-controls', panel.id);
     button.addEventListener('click', () => navigateToPage(button.dataset.pageTarget));
+    button.addEventListener('keydown', (event) => {
+      const currentDotIndex = pageDots.indexOf(button);
+      let nextDotIndex = currentDotIndex;
+      if (['ArrowRight', 'ArrowDown'].includes(event.key)) nextDotIndex = (currentDotIndex + 1) % pageDots.length;
+      if (['ArrowLeft', 'ArrowUp'].includes(event.key)) nextDotIndex = (currentDotIndex - 1 + pageDots.length) % pageDots.length;
+      if (event.key === 'Home') nextDotIndex = 0;
+      if (event.key === 'End') nextDotIndex = pageDots.length - 1;
+      if (nextDotIndex === currentDotIndex) return;
+      event.preventDefault();
+      pageDots[nextDotIndex].focus();
+      navigateToPage(pageDots[nextDotIndex].dataset.pageTarget);
+    });
   });
 }
 
 previousPageButton.addEventListener('click', () => navigateToPage(pageOrder[currentPageIndex - 1]));
 nextPageButton.addEventListener('click', () => navigateToPage(pageOrder[currentPageIndex + 1]));
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  if (link.classList.contains('skip-link')) return;
   const target = link.getAttribute('href').slice(1);
   if (!pageOrder.includes(target)) return;
   link.addEventListener('click', (event) => {
@@ -566,7 +570,7 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
 });
 
 window.addEventListener('keydown', (event) => {
-  if (projectDialog?.open || feedbackDialog?.open || event.target.closest('input, textarea, select, [role="tab"], button')) return;
+  if (projectDialog?.open || event.target.closest('input, textarea, select, [role="tab"], button')) return;
   if (['PageDown', 'ArrowRight'].includes(event.key) && currentPageIndex < pageOrder.length - 1) {
     event.preventDefault();
     navigateToPage(pageOrder[currentPageIndex + 1]);
@@ -575,10 +579,18 @@ window.addEventListener('keydown', (event) => {
     event.preventDefault();
     navigateToPage(pageOrder[currentPageIndex - 1]);
   }
+  if (event.key === 'Home') {
+    event.preventDefault();
+    navigateToPage(pageOrder[0]);
+  }
+  if (event.key === 'End') {
+    event.preventDefault();
+    navigateToPage(pageOrder[pageOrder.length - 1]);
+  }
 });
 
 window.addEventListener('wheel', (event) => {
-  if (projectDialog?.open || feedbackDialog?.open || pageTransitioning || Math.abs(event.deltaY) < 24) return;
+  if (projectDialog?.open || pageTransitioning || Math.abs(event.deltaY) < 24) return;
   const maxScroll = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
   const atTop = window.scrollY <= 2;
   const atBottom = maxScroll <= 4 || window.scrollY >= maxScroll - 3;
@@ -592,11 +604,11 @@ window.addEventListener('wheel', (event) => {
 }, { passive: false });
 
 window.addEventListener('touchstart', (event) => {
-  if (projectDialog?.open || feedbackDialog?.open) return;
+  if (projectDialog?.open) return;
   touchStartY = event.touches[0].clientY;
 }, { passive: true });
 window.addEventListener('touchend', (event) => {
-  if (touchStartY === null || projectDialog?.open || feedbackDialog?.open || pageTransitioning) return;
+  if (touchStartY === null || projectDialog?.open || pageTransitioning) return;
   const distance = touchStartY - event.changedTouches[0].clientY;
   touchStartY = null;
   if (Math.abs(distance) < 70) return;
@@ -607,10 +619,15 @@ window.addEventListener('touchend', (event) => {
   if (distance < 0 && atTop && currentPageIndex > 0) navigateToPage(pageOrder[currentPageIndex - 1]);
 }, { passive: true });
 
-window.addEventListener('popstate', () => {
+function syncPageFromLocation() {
   const target = location.hash.slice(1);
-  if (pageOrder.includes(target)) navigateToPage(target, { skipAnimation: true, history: false });
-});
+  const nextPage = pageOrder.includes(target) ? target : 'home';
+  if (pageOrder[currentPageIndex] === nextPage) return;
+  navigateToPage(nextPage, { skipAnimation: true, history: false });
+}
+
+window.addEventListener('popstate', syncPageFromLocation);
+window.addEventListener('hashchange', syncPageFromLocation);
 
 document.querySelectorAll('.tilt-card').forEach((card) => {
   card.addEventListener('pointermove', (event) => {
@@ -682,126 +699,6 @@ versionTabs.forEach((tab, index) => {
   });
 });
 setProjectVersion('v2');
-
-const feedbackOpenButton = document.querySelector('#feedback-open');
-const feedbackCloseButton = document.querySelector('#feedback-close');
-const feedbackForm = document.querySelector('#feedback-form');
-const feedbackStatus = document.querySelector('#feedback-status');
-const feedbackSubmitButton = document.querySelector('#feedback-submit');
-let feedbackSubmitting = false;
-
-function setFeedbackState(state) {
-  feedbackStatus.dataset.state = state;
-  feedbackStatus.textContent = copy[currentLanguage][`feedback.${state}`];
-  feedbackSubmitButton.querySelector('span').textContent = copy[currentLanguage][state === 'sending' ? 'feedback.sending' : 'feedback.submit'];
-  feedbackSubmitButton.disabled = state === 'sending';
-}
-
-function openFeedbackDialog() {
-  if (feedbackDialog.open) return;
-  if (feedbackStatus.dataset.state !== 'success') setFeedbackState('ready');
-  feedbackDialog.showModal();
-  document.body.classList.add('dialog-open');
-}
-
-function closeFeedbackDialog() {
-  if (!feedbackDialog.open || feedbackSubmitting) return;
-  feedbackDialog.close();
-}
-
-function isPrivilegedKey(key) {
-  if (key.startsWith('sb_secret_')) return true;
-  if (key.split('.').length !== 3) return false;
-  try {
-    const encoded = key.split('.')[1].replace(/-/g, '+').replace(/_/g, '/');
-    const payload = JSON.parse(atob(encoded));
-    return payload.role === 'service_role';
-  } catch (error) {
-    return false;
-  }
-}
-
-function getFeedbackBackend() {
-  const config = window.HOMEPAGE_CONFIG || {};
-  const url = String(config.supabaseUrl || '').trim().replace(/\/+$/, '');
-  const key = String(config.supabasePublishableKey || '').trim();
-  if (!url.startsWith('https://') || !key || isPrivilegedKey(key)) return null;
-  return { url, key };
-}
-
-async function submitFeedback(event) {
-  event.preventDefault();
-  if (feedbackSubmitting) return;
-
-  const formData = new FormData(feedbackForm);
-  if (formData.get('website')) {
-    feedbackForm.reset();
-    setFeedbackState('success');
-    return;
-  }
-
-  const backend = getFeedbackBackend();
-  if (!backend) {
-    setFeedbackState('config');
-    return;
-  }
-
-  const payload = {
-    name: String(formData.get('name') || '').trim() || null,
-    relation: formData.get('relation'),
-    device: formData.get('device'),
-    message: String(formData.get('message') || '').trim(),
-    version: 'V3'
-  };
-  const headers = {
-    apikey: backend.key,
-    'Content-Type': 'application/json',
-    Prefer: 'return=minimal'
-  };
-  if (backend.key.startsWith('eyJ')) headers.Authorization = `Bearer ${backend.key}`;
-
-  feedbackSubmitting = true;
-  setFeedbackState('sending');
-  const controller = new AbortController();
-  const timeout = window.setTimeout(() => controller.abort(), 15000);
-
-  try {
-    const response = await fetch(`${backend.url}/rest/v1/feedback`, {
-      method: 'POST',
-      headers,
-      body: JSON.stringify(payload),
-      signal: controller.signal,
-      credentials: 'omit'
-    });
-    if (!response.ok) throw new Error(`Feedback request failed with status ${response.status}`);
-    feedbackForm.reset();
-    setFeedbackState('success');
-  } catch (error) {
-    console.error('Feedback submission failed:', error.message);
-    setFeedbackState('error');
-  } finally {
-    window.clearTimeout(timeout);
-    feedbackSubmitting = false;
-    if (feedbackStatus.dataset.state !== 'sending') feedbackSubmitButton.disabled = false;
-  }
-}
-
-feedbackOpenButton.addEventListener('click', openFeedbackDialog);
-feedbackCloseButton.addEventListener('click', closeFeedbackDialog);
-feedbackForm.addEventListener('submit', submitFeedback);
-feedbackDialog.addEventListener('click', (event) => {
-  if (event.target === feedbackDialog) closeFeedbackDialog();
-});
-feedbackDialog.addEventListener('cancel', (event) => {
-  if (!feedbackSubmitting) return;
-  event.preventDefault();
-});
-feedbackDialog.addEventListener('close', () => {
-  if (!projectDialog.open) document.body.classList.remove('dialog-open');
-  feedbackOpenButton.focus({ preventScroll: true });
-});
-setFeedbackState('ready');
-if (new URLSearchParams(window.location.search).has('feedback')) openFeedbackDialog();
 
 const log = document.querySelector('#chat-log');
 const form = document.querySelector('#chat-form');
@@ -918,12 +815,95 @@ function setLanguage(language) {
   languageToggle.setAttribute('title', language === 'zh' ? 'Switch to English' : '切换到中文');
   document.querySelector('.dialog-close').setAttribute('aria-label', language === 'zh' ? '关闭项目档案' : 'Close project archive');
   document.querySelector('.dialog-close').setAttribute('title', language === 'zh' ? '关闭' : 'Close');
-  feedbackCloseButton.setAttribute('aria-label', language === 'zh' ? '关闭反馈表单' : 'Close feedback form');
-  feedbackCloseButton.setAttribute('title', language === 'zh' ? '关闭' : 'Close');
-  setFeedbackState(feedbackStatus.dataset.state || 'ready');
   updatePageNavigationLabels();
   setMotion(paused);
   try { localStorage.setItem('bob-homepage-language', language); } catch (error) { /* File previews may disable storage. */ }
+}
+
+// Mini game: click the moving star as many times as possible in 20 seconds.
+const gameArena = document.querySelector('#game-arena');
+const gameTarget = document.querySelector('#game-target');
+const gameStart = document.querySelector('#game-start');
+const gameScore = document.querySelector('#game-score');
+const gameTime = document.querySelector('#game-time');
+const gameBest = document.querySelector('#game-best');
+const gameLevel = document.querySelector('#game-level');
+const gameMessage = document.querySelector('#game-message');
+const gameHint = document.querySelector('#game-hint');
+let gameTimer = null;
+let targetMover = null;
+let gameRunning = false;
+let gameScoreValue = 0;
+let gameTimeValue = 20;
+let gameLevelValue = 1;
+let gameComboValue = 0;
+let gameBestValue = 0;
+try { gameBestValue = Number(localStorage.getItem('bob-star-catcher-best') || 0); } catch (error) { /* Keep the default score. */ }
+if (gameBest) gameBest.textContent = gameBestValue;
+
+function moveGameTarget() {
+  if (!gameArena || !gameTarget) return;
+  const padding = 24;
+  const x = padding + Math.random() * Math.max(1, gameArena.clientWidth - padding * 2);
+  const y = padding + Math.random() * Math.max(1, gameArena.clientHeight - padding * 2);
+  gameTarget.style.left = `${x}px`;
+  gameTarget.style.top = `${y}px`;
+  gameTarget.style.width = `${Math.max(22, 34 - gameLevelValue * 2)}px`;
+  gameTarget.style.height = gameTarget.style.width;
+}
+
+function endGame() {
+  gameRunning = false;
+  window.clearInterval(gameTimer);
+  window.clearInterval(targetMover);
+  gameTarget.hidden = true;
+  gameMessage.hidden = false;
+  gameMessage.textContent = `时间到！本轮得分 ${gameScoreValue}`;
+  gameHint.textContent = `最终等级 ${gameLevelValue} · 最高连击 ${gameComboValue}`;
+  gameStart.textContent = '再玩一次';
+  if (gameScoreValue > gameBestValue) {
+    gameBestValue = gameScoreValue;
+    gameBest.textContent = gameBestValue;
+    try { localStorage.setItem('bob-star-catcher-best', String(gameBestValue)); } catch (error) { /* Ignore file preview storage limits. */ }
+  }
+}
+
+function startGame() {
+  if (!gameArena || !gameTarget || gameRunning) return;
+  gameRunning = true;
+  gameScoreValue = 0;
+  gameTimeValue = 20;
+  gameLevelValue = 1;
+  gameComboValue = 0;
+  gameScore.textContent = gameScoreValue;
+  gameTime.textContent = gameTimeValue;
+  gameLevel.textContent = gameLevelValue;
+  gameHint.textContent = '连续命中可获得连击加分';
+  gameMessage.hidden = true;
+  gameTarget.hidden = false;
+  gameStart.textContent = '游戏进行中…';
+  moveGameTarget();
+  targetMover = window.setInterval(moveGameTarget, 1450);
+  gameTimer = window.setInterval(() => {
+    gameTimeValue -= 1;
+    gameTime.textContent = gameTimeValue;
+    if (gameTimeValue <= 0) endGame();
+  }, 1000);
+}
+
+if (gameStart && gameTarget) {
+  gameStart.addEventListener('click', startGame);
+  gameTarget.addEventListener('click', () => {
+    if (!gameRunning) return;
+    gameComboValue += 1;
+    const comboBonus = gameComboValue >= 5 ? 2 : 1;
+    gameScoreValue += comboBonus;
+    gameLevelValue = Math.min(9, 1 + Math.floor(gameScoreValue / 8));
+    gameScore.textContent = gameScoreValue;
+    gameLevel.textContent = gameLevelValue;
+    gameHint.textContent = gameComboValue >= 5 ? `连击 x${gameComboValue} · 额外 +${comboBonus}` : `连击 x${gameComboValue}`;
+    moveGameTarget();
+  });
 }
 
 languageToggle.addEventListener('click', () => setLanguage(currentLanguage === 'zh' ? 'en' : 'zh'));
