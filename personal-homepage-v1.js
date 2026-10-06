@@ -5,9 +5,9 @@ const copy = {
     'nav.about': '档案', 'nav.projects': '探索', 'nav.twin': '数字分身', 'nav.english': '英文课堂', 'nav.ai': 'AI 探索', 'nav.life': '生活坐标', 'nav.notes': '学习笔记', 'nav.contact': '联系',
     signal: '信号在线',
     'hero.tagline': '一名在全英文课堂里适应、提问，<br>并大步走向 AI 的大一新生。',
-    'hero.action': '认识我', 'hero.scroll': '向下探索',
-    'planet.about': '个人档案', 'planet.projects': '探索记录', 'planet.twin': '数字分身', 'planet.english': '英文课堂',
-    'planet.ai': 'AI 探索', 'planet.life': '生活坐标', 'planet.notes': '学习笔记', 'planet.contact': '联系方式',
+    'hero.action': '认识我', 'hero.scroll': '点击星球进入',
+    'planet.about': '个人档案', 'planet.projects': '项目实验室', 'planet.twin': '数字分身', 'planet.english': '学习轨迹',
+    'planet.ai': 'AI 探索', 'planet.life': '生活坐标', 'planet.notes': '学习笔记', 'planet.contact': '留言与联系',
     'about.title': '先认识我，<br>再看我走向哪里。',
     'about.lead': '我是 Bob，一名在天津大学与香港理工大学合作办学项目中学习的大一新生，目前探索智能医学工程与脑机接口相关方向。面对全英文课堂，我正在借助 AI 跨过语言与理解的双重门槛，也尝试把自己的真实问题做成有用的软件。',
     'about.origin': '一次偶然的机会，我听说同学只用自然语言就让 AI 做出了很厉害的程序。那种“想法可以直接变成作品”的可能性，让我开始认真接触 AI。',
@@ -20,14 +20,15 @@ const copy = {
     'projects.title': '正在发生的探索',
     'projects.intro': '只记录真实发生过的过程。完成的公开，进行中的先留在自己的工作台。',
     'projects.homeTitle': '个人宇宙', 'projects.homeDesc': '面向同学、老师与家人的个人主页。从一张静态名片出发，逐步加入真实档案、学习时间线、双语切换与数字分身。',
-    'projects.homeFact': '移动端适配 · 本地问答 · 动效控制', 'projects.homeStatus': 'V3 持续更新', 'projects.open': '查看项目档案',
+    'projects.homeFact': '反馈系统 · 移动端适配 · 本地问答', 'projects.homeStatus': 'V3 持续更新', 'projects.open': '查看项目档案',
     'projects.notesTitle': 'AI 工具实践', 'projects.notesDesc': '记录我如何描述需求、测试结果和复盘失败，让“会使用工具”逐渐变成自己的判断力。', 'projects.notesStatus': '学习笔记持续积累',
     'projects.classTitle': '英文课堂复盘', 'projects.classDesc': '整理课堂里没听懂的术语、逻辑链和知识点，再借助 AI 翻译与解释完成第二次吸收。', 'projects.classStatus': '从跟不上到能复述',
     'timeline.title': '把学习留下来，<br>让成长有迹可循。', 'timeline.intro': '这里不等待“完美成果”，只记录真实的起点、行动和下一步。',
     'timeline.item1Title': '个人主页 V1 启航', 'timeline.item1Desc': '明确主页面向同学、老师和家人，用原生网页技术搭出可本地预览的第一版。',
     'timeline.item2Title': '把真实资料放回页面', 'timeline.item2Desc': '补充身份、全英文学习体验、接触 AI 的起点，并重新确认哪些内容适合公开。',
     'timeline.item3Title': 'V2 增加内容与动态', 'timeline.item3Desc': '上线双语切换、成长目标、学习时间线、邮箱入口和更完整的数字分身问答。',
-    'timeline.item4Title': '建立计算机知识星图', 'timeline.item4Desc': '从信号传导、路径与协议开始，把零散概念连成能够复述和应用的知识网络。',
+    'timeline.item4Title': 'V3 建立反馈闭环', 'timeline.item4Desc': '加入私密反馈表单，完成字段校验、提交状态和重复点击保护；用 Supabase RLS 限制公开端只能提交，桌面与手机端到端验收通过，本地记录仍等待线上发布后的复核。',
+    'timeline.item5Title': '把反馈变成下一轮改进', 'timeline.item5Desc': '发布后继续核对线上资源、导航和反馈链路，再根据真实访客的反馈决定下一步。',
     'twin.title': '建立通讯', 'twin.intro': '它只根据我愿意公开的真实资料回答。遇到暂时不会的问题，你可以把问题留给我，等我回复后继续扩充数字分身。',
     'twin.welcome': '信号已接通。我是 Bob 的数字分身。关于他的学习、AI 起点、目标和兴趣，我都可以回答。', 'twin.source': '本地资料 + 已发布问答',
     'english.title': '把“没听懂”，<br>变成下一次能复述。', 'english.intro': '这里将记录全英文课堂中的生词、知识链和复盘方法。目前先搭好学习工作流，后续逐步补充真实课堂笔记。',
@@ -50,13 +51,17 @@ const copy = {
     'chat.now': '刚刚', 'chat.label': '输入问题', 'chat.placeholder': '输入一条讯息…', 'chat.ready': '通讯频道就绪', 'chat.searching': '正在搜索公开知识库', 'chat.receiving': '正在接收讯息', 'chat.complete': '讯息接收完成',
     'chat.unknown': '这个问题暂时不在我的公开知识库里。你愿意把它留给 Bob 吗？他回复并发布后，我下次就能回答。',
     'chat.leave': '把问题留给 Bob', 'chat.leaving': '正在传送问题…', 'chat.left': '问题已送达。Bob 会在后台看到它，回复并发布后，数字分身就会学会这条答案。',
-    'chat.leaveError': '这次没有送达，请稍后重试。', 'chat.leaveConfig': '留言后台尚未完成配置。', 'chat.leaveAgain': '重新发送',
+    'chat.leaveError': '这次没有送达，请稍后重试。', 'chat.leaveConfig': '留言通道暂时不可用。', 'chat.leaveAgain': '重新发送',
+    'chat.messageTitle': '给 Bob 留言', 'chat.messageNote': '只会私密送达，不会公开显示', 'chat.messageCancel': '返回问答模式', 'chat.messageCancelNote': '继续向数字分身提问',
+    'chat.messagePlaceholder': '写下想对 Bob 说的话…', 'chat.messageLabel': '输入私密留言', 'chat.messageReady': '私密留言模式 · 只有 Bob 可见', 'chat.messageSending': '正在私密传送留言…', 'chat.messageLeft': '留言已送达。其他访客看不到这条内容。',
     'projectDialog.title': '从一张名片，走向一座个人宇宙。', 'projectDialog.summary': '这是我第一次用原生网页技术和 AI 协作完成的持续迭代项目。目标不是制造一个完美人设，而是让同学、老师和家人快速认识真实的我。',
     'projectDialog.stackLabel': '技术栈', 'projectDialog.audienceLabel': '目标访客', 'projectDialog.audience': '同学 / 老师 / 家人', 'projectDialog.stateLabel': '当前状态', 'projectDialog.state': 'V3 持续迭代',
     'projectDialog.versionTitle': '版本穿梭', 'projectDialog.v1Title': '先完成一个能用的起点', 'projectDialog.v1Body': '建立基本的个人介绍、兴趣标签和本地数字分身，让页面能够在电脑与手机上正常浏览。',
     'projectDialog.v1One': '单页个人介绍', 'projectDialog.v1Two': '常见问题快捷入口', 'projectDialog.v1Three': '原生技术、本地运行',
     'projectDialog.v2Title': '让内容和表达更像自己', 'projectDialog.v2Body': '重新梳理真实身份和公开边界，加入学习时间线、中英双语、邮箱入口、动态控制与更完整的本地问答。',
     'projectDialog.v2One': '真实资料与隐私边界', 'projectDialog.v2Two': '双语内容和学习时间线', 'projectDialog.v2Three': '响应式布局与减少动态模式',
+    'projectDialog.v3Title': '让反馈真正回到迭代里', 'projectDialog.v3Body': '把主页从“展示页面”推进成可以被体验和改进的作品：接入私密反馈表单，完成字段校验、提交状态和重复点击保护，并用 Supabase RLS 限制公开端只能提交、不能读取反馈。',
+    'projectDialog.v3One': '反馈表单与双语状态', 'projectDialog.v3Two': 'Supabase RLS 最小权限', 'projectDialog.v3Three': '桌面 / 手机端到端验收',
     'projectDialog.problemTitle': '要解决的问题', 'projectDialog.problemBody': '初版能够使用，但身份、学习经历和个人判断还没有形成清楚的叙事。',
     'projectDialog.decisionTitle': '我的取舍', 'projectDialog.decisionBody': '保留“个人宇宙”主题，用真实内容、克制动画和明确隐私边界取代功能堆叠。',
     'projectDialog.verifyTitle': '如何验证', 'projectDialog.verifyBody': '检查脚本语法、本地资源加载、桌面与手机首屏，以及减少动态设置下的可用性。',
@@ -79,9 +84,9 @@ const copy = {
     'nav.about': 'Profile', 'nav.projects': 'Exploration', 'nav.twin': 'Digital Twin', 'nav.english': 'English Class', 'nav.ai': 'AI Practice', 'nav.life': 'Life', 'nav.notes': 'Study Notes', 'nav.contact': 'Contact',
     signal: 'SIGNAL ONLINE',
     'hero.tagline': 'A freshman adapting, questioning and learning<br>in an English-medium program while embracing AI.',
-    'hero.action': 'Meet Bob', 'hero.scroll': 'SCROLL TO EXPLORE',
-    'planet.about': 'Profile', 'planet.projects': 'Exploration', 'planet.twin': 'Digital Twin', 'planet.english': 'English Class',
-    'planet.ai': 'AI Practice', 'planet.life': 'Life', 'planet.notes': 'Study Notes', 'planet.contact': 'Contact',
+    'hero.action': 'Meet Bob', 'hero.scroll': 'SELECT A PLANET',
+    'planet.about': 'Profile', 'planet.projects': 'Project Lab', 'planet.twin': 'Digital Twin', 'planet.english': 'Learning Timeline',
+    'planet.ai': 'AI Signal', 'planet.life': 'Life Orbit', 'planet.notes': 'Idea Satellite', 'planet.contact': 'Messages & Contact',
     'about.title': 'Meet me first.<br>Then see where I am going.',
     'about.lead': 'I am Bob, a freshman in a joint educational program between Tianjin University and The Hong Kong Polytechnic University, exploring intelligent medical engineering and brain-computer-interface-related directions. In an English-medium classroom, I use AI to bridge gaps in language and understanding while learning to turn real problems into useful software.',
     'about.origin': 'I once heard that a classmate had built an impressive program with AI using only natural language. The possibility that an idea could become something real made me want to explore AI for myself.',
@@ -94,14 +99,15 @@ const copy = {
     'projects.title': 'Exploration in progress',
     'projects.intro': 'Only real work is recorded here. Finished work is public; unfinished work stays on my own desk.',
     'projects.homeTitle': 'Personal Universe', 'projects.homeDesc': 'A personal site for classmates, teachers and family. It is growing from a static profile into a bilingual space with real context, a learning timeline and a digital twin.',
-    'projects.homeFact': 'Responsive layout · Local Q&A · Motion controls', 'projects.homeStatus': 'V3 growing', 'projects.open': 'Open project archive',
+    'projects.homeFact': 'Feedback system · Responsive layout · Local Q&A', 'projects.homeStatus': 'V3 growing', 'projects.open': 'Open project archive',
     'projects.notesTitle': 'AI Tool Practice', 'projects.notesDesc': 'I record how I frame requests, test results and reflect on failures so that tool use gradually becomes personal judgment.', 'projects.notesStatus': 'Notes in progress',
     'projects.classTitle': 'English Class Review', 'projects.classDesc': 'I revisit unfamiliar terms, reasoning chains and concepts, then use AI translation and explanation for a second pass.', 'projects.classStatus': 'From missing it to retelling it',
     'timeline.title': 'Leave a trail of learning.<br>Make growth visible.', 'timeline.intro': 'This timeline does not wait for perfect results. It records honest starting points, actions and next steps.',
     'timeline.item1Title': 'Personal site V1 launched', 'timeline.item1Desc': 'Defined the audience as classmates, teachers and family, then built the first locally viewable version with native web technologies.',
     'timeline.item2Title': 'Real context returned to the page', 'timeline.item2Desc': 'Added my identity, English-medium learning experience and AI starting point, while checking what should stay private.',
     'timeline.item3Title': 'V2 adds context and motion', 'timeline.item3Desc': 'Added bilingual content, first-year goals, a learning timeline, email access and richer digital-twin answers.',
-    'timeline.item4Title': 'Build a computing knowledge map', 'timeline.item4Desc': 'Starting with signal transmission, paths and protocols, I will connect concepts into knowledge I can explain and apply.',
+    'timeline.item4Title': 'V3 closes the feedback loop', 'timeline.item4Desc': 'Added a private feedback form with validation, submission states and duplicate-click protection. Supabase RLS limits the public client to inserts only; desktop and mobile acceptance passed locally, with an online recheck still pending after release.',
+    'timeline.item5Title': 'Turn feedback into the next iteration', 'timeline.item5Desc': 'After release, recheck online assets, navigation and the feedback path, then let real visitor feedback decide what comes next.',
     'twin.title': 'Open a channel', 'twin.intro': 'It answers only from facts I have chosen to make public. If it cannot answer yet, you can leave the question for me and help expand the twin after I reply.',
     'twin.welcome': 'Signal connected. I am Bob\'s digital twin. Ask me about his studies, AI starting point, goals or interests.', 'twin.source': 'LOCAL + PUBLISHED ANSWERS',
     'english.title': 'Turn “I missed it”<br>into “I can explain it.”', 'english.intro': 'This page will collect vocabulary, reasoning chains and review methods from English-medium classes. The workflow comes first; real class notes will follow.',
@@ -124,13 +130,17 @@ const copy = {
     'chat.now': 'now', 'chat.label': 'Enter a question', 'chat.placeholder': 'Send a message…', 'chat.ready': 'Communication channel ready', 'chat.searching': 'Searching public knowledge', 'chat.receiving': 'Receiving transmission', 'chat.complete': 'Transmission complete',
     'chat.unknown': 'That question is not in my public knowledge yet. Would you like to leave it for Bob? After he replies and publishes it, I will be able to answer next time.',
     'chat.leave': 'Leave this question for Bob', 'chat.leaving': 'Sending question…', 'chat.left': 'Question delivered. Bob can reply in the private dashboard and publish the answer to teach the digital twin.',
-    'chat.leaveError': 'It was not delivered. Please try again later.', 'chat.leaveConfig': 'The question inbox has not been configured yet.', 'chat.leaveAgain': 'Try again',
+    'chat.leaveError': 'It was not delivered. Please try again later.', 'chat.leaveConfig': 'The private message channel is temporarily unavailable.', 'chat.leaveAgain': 'Try again',
+    'chat.messageTitle': 'Leave Bob a message', 'chat.messageNote': 'Delivered privately and never shown publicly', 'chat.messageCancel': 'Return to Q&A', 'chat.messageCancelNote': 'Continue asking the digital twin',
+    'chat.messagePlaceholder': 'Write a private message for Bob…', 'chat.messageLabel': 'Enter a private message', 'chat.messageReady': 'Private message mode · Bob only', 'chat.messageSending': 'Sending private message…', 'chat.messageLeft': 'Message delivered. Other visitors cannot see it.',
     'projectDialog.title': 'From a profile card to a personal universe.', 'projectDialog.summary': 'This is my first continuously evolving project built with native web technologies and AI collaboration. Its goal is not to create a perfect persona, but to help classmates, teachers and family meet the real me quickly.',
     'projectDialog.stackLabel': 'Stack', 'projectDialog.audienceLabel': 'Audience', 'projectDialog.audience': 'Classmates / Teachers / Family', 'projectDialog.stateLabel': 'Status', 'projectDialog.state': 'V3 in progress',
     'projectDialog.versionTitle': 'Version voyager', 'projectDialog.v1Title': 'Build a useful starting point first', 'projectDialog.v1Body': 'Established a basic profile, interest tags and a local digital twin so the page could work on both desktop and mobile.',
     'projectDialog.v1One': 'Single-page profile', 'projectDialog.v1Two': 'Suggested question shortcuts', 'projectDialog.v1Three': 'Native stack, local runtime',
     'projectDialog.v2Title': 'Make the content and expression more personal', 'projectDialog.v2Body': 'Reframed my real identity and public boundaries, then added a learning timeline, bilingual content, email access, motion controls and richer local Q&A.',
     'projectDialog.v2One': 'Real context and privacy boundaries', 'projectDialog.v2Two': 'Bilingual content and learning timeline', 'projectDialog.v2Three': 'Responsive layout and reduced motion',
+    'projectDialog.v3Title': 'Bring feedback back into iteration', 'projectDialog.v3Body': 'Moved the site from a showcase toward a work that can be experienced and improved: added a private feedback form with validation, submission states and duplicate-click protection, while Supabase RLS lets the public client insert but never read feedback.',
+    'projectDialog.v3One': 'Feedback form and bilingual states', 'projectDialog.v3Two': 'Least-privilege Supabase RLS', 'projectDialog.v3Three': 'Desktop / mobile acceptance',
     'projectDialog.problemTitle': 'The problem', 'projectDialog.problemBody': 'The first version worked, but my identity, learning experience and personal judgment did not yet form a clear story.',
     'projectDialog.decisionTitle': 'My decisions', 'projectDialog.decisionBody': 'Keep the Personal Universe theme, then use real content, restrained motion and explicit privacy boundaries instead of adding more features.',
     'projectDialog.verifyTitle': 'How I verified it', 'projectDialog.verifyBody': 'Checked script syntax, local resource loading, desktop and mobile layouts, and usability with reduced motion enabled.',
@@ -240,7 +250,8 @@ function resizeCanvas() {
   const bounds = universe.getBoundingClientRect();
   const nextWidth = Math.max(1, bounds.width);
   const nextHeight = Math.max(1, bounds.height);
-  const nextPixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+  const compactCanvas = window.matchMedia('(max-width: 700px), (pointer: coarse)').matches;
+  const nextPixelRatio = Math.min(window.devicePixelRatio || 1, compactCanvas ? 1.25 : 2);
   if (nextWidth === width && nextHeight === height && nextPixelRatio === pixelRatio) return;
 
   // A resize can fire repeatedly while the browser is settling its viewport.
@@ -410,7 +421,7 @@ if ('IntersectionObserver' in window) {
   document.querySelectorAll('[data-section-root]').forEach((section) => sectionObserver.observe(section));
 }
 
-const pageOrder = ['home', 'about', 'projects', 'twin', 'english', 'ai', 'life', 'notes', 'contact'];
+const pageOrder = ['home', 'about', 'projects', 'timeline', 'twin', 'contact'];
 const pagePanels = new Map([...document.querySelectorAll('[data-page-id]')].map((panel) => [panel.dataset.pageId, panel]));
 const pageDots = [...document.querySelectorAll('[data-page-target]')];
 const previousPageButton = document.querySelector('[data-page-prev]');
@@ -423,6 +434,7 @@ const warpCanvas = document.querySelector('#warp-canvas');
 const warpContext = warpCanvas.getContext('2d');
 let currentPageIndex = 0;
 let pageTransitioning = false;
+let scrollNavigationLocked = false;
 let touchStartY = null;
 
 function pageName(pageId) {
@@ -502,12 +514,13 @@ function runWarp(direction, swapPages) {
   }
 
   const bounds = warpTransition.getBoundingClientRect();
-  const ratio = Math.min(window.devicePixelRatio || 1, 2);
+  const compactViewport = window.matchMedia('(max-width: 700px), (pointer: coarse)').matches;
+  const ratio = Math.min(window.devicePixelRatio || 1, compactViewport ? 1.25 : 2);
   warpCanvas.width = Math.max(1, Math.round(bounds.width * ratio));
   warpCanvas.height = Math.max(1, Math.round(bounds.height * ratio));
   warpContext.setTransform(ratio, 0, 0, ratio, 0, 0);
-  const duration = 780;
-  const starCount = window.innerWidth < 700 ? 34 : 54;
+  const duration = compactViewport ? 520 : 780;
+  const starCount = compactViewport ? 24 : 54;
   const stars = Array.from({ length: starCount }, (_, index) => ({
     angle: Math.random() * Math.PI * 2,
     seed: Math.random(),
@@ -588,18 +601,18 @@ function initializePagination() {
     const panel = pagePanels.get(button.dataset.pageTarget);
     if (!panel.id) panel.id = `${button.dataset.pageTarget}-panel`;
     button.setAttribute('aria-controls', panel.id);
-    button.addEventListener('click', () => navigateToPage(button.dataset.pageTarget));
+    button.addEventListener('click', () => navigateToPage(button.dataset.pageTarget, { skipAnimation: true }));
   });
 }
 
-previousPageButton.addEventListener('click', () => navigateToPage(pageOrder[currentPageIndex - 1]));
-nextPageButton.addEventListener('click', () => navigateToPage(pageOrder[currentPageIndex + 1]));
+previousPageButton.addEventListener('click', () => navigateToPage(pageOrder[currentPageIndex - 1], { skipAnimation: true }));
+nextPageButton.addEventListener('click', () => navigateToPage(pageOrder[currentPageIndex + 1], { skipAnimation: true }));
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
   const target = link.getAttribute('href').slice(1);
   if (!pageOrder.includes(target)) return;
   link.addEventListener('click', (event) => {
     event.preventDefault();
-    navigateToPage(target);
+    navigateToPage(target, { skipAnimation: !link.classList.contains('planet') });
   });
 });
 
@@ -607,25 +620,32 @@ window.addEventListener('keydown', (event) => {
   if (projectDialog?.open || feedbackDialog?.open || event.target.closest('input, textarea, select, [role="tab"], button')) return;
   if (['PageDown', 'ArrowRight'].includes(event.key) && currentPageIndex < pageOrder.length - 1) {
     event.preventDefault();
-    navigateToPage(pageOrder[currentPageIndex + 1]);
+    navigateToPage(pageOrder[currentPageIndex + 1], { skipAnimation: true });
   }
   if (['PageUp', 'ArrowLeft'].includes(event.key) && currentPageIndex > 0) {
     event.preventDefault();
-    navigateToPage(pageOrder[currentPageIndex - 1]);
+    navigateToPage(pageOrder[currentPageIndex - 1], { skipAnimation: true });
   }
 });
 
+function navigateFromScroll(pageId) {
+  if (!pageId || scrollNavigationLocked || pageTransitioning) return;
+  scrollNavigationLocked = true;
+  navigateToPage(pageId, { skipAnimation: true });
+  window.setTimeout(() => { scrollNavigationLocked = false; }, 480);
+}
+
 window.addEventListener('wheel', (event) => {
-  if (projectDialog?.open || feedbackDialog?.open || pageTransitioning || Math.abs(event.deltaY) < 24) return;
+  if (projectDialog?.open || feedbackDialog?.open || scrollNavigationLocked || Math.abs(event.deltaY) < 24) return;
   const maxScroll = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
   const atTop = window.scrollY <= 2;
   const atBottom = maxScroll <= 4 || window.scrollY >= maxScroll - 3;
   if (event.deltaY > 0 && atBottom && currentPageIndex < pageOrder.length - 1) {
     event.preventDefault();
-    navigateToPage(pageOrder[currentPageIndex + 1]);
+    navigateFromScroll(pageOrder[currentPageIndex + 1]);
   } else if (event.deltaY < 0 && atTop && currentPageIndex > 0) {
     event.preventDefault();
-    navigateToPage(pageOrder[currentPageIndex - 1]);
+    navigateFromScroll(pageOrder[currentPageIndex - 1]);
   }
 }, { passive: false });
 
@@ -633,16 +653,17 @@ window.addEventListener('touchstart', (event) => {
   if (projectDialog?.open || feedbackDialog?.open) return;
   touchStartY = event.touches[0].clientY;
 }, { passive: true });
+
 window.addEventListener('touchend', (event) => {
-  if (touchStartY === null || projectDialog?.open || feedbackDialog?.open || pageTransitioning) return;
+  if (touchStartY === null || projectDialog?.open || feedbackDialog?.open || scrollNavigationLocked) return;
   const distance = touchStartY - event.changedTouches[0].clientY;
   touchStartY = null;
   if (Math.abs(distance) < 70) return;
   const maxScroll = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
   const atTop = window.scrollY <= 2;
   const atBottom = maxScroll <= 4 || window.scrollY >= maxScroll - 3;
-  if (distance > 0 && atBottom && currentPageIndex < pageOrder.length - 1) navigateToPage(pageOrder[currentPageIndex + 1]);
-  if (distance < 0 && atTop && currentPageIndex > 0) navigateToPage(pageOrder[currentPageIndex - 1]);
+  if (distance > 0 && atBottom && currentPageIndex < pageOrder.length - 1) navigateFromScroll(pageOrder[currentPageIndex + 1]);
+  if (distance < 0 && atTop && currentPageIndex > 0) navigateFromScroll(pageOrder[currentPageIndex - 1]);
 }, { passive: true });
 
 window.addEventListener('popstate', () => {
@@ -719,7 +740,7 @@ versionTabs.forEach((tab, index) => {
     setProjectVersion(versionTabs[nextIndex].dataset.version);
   });
 });
-setProjectVersion('v2');
+setProjectVersion('v3');
 
 const feedbackOpenButton = document.querySelector('#feedback-open');
 const feedbackCloseButton = document.querySelector('#feedback-close');
@@ -865,12 +886,358 @@ feedbackDialog.addEventListener('focusin', (event) => {
 setFeedbackState('ready');
 if (new URLSearchParams(window.location.search).has('feedback')) openFeedbackDialog();
 
+// Simulated BCI game: holding focus drives a signal cursor toward pulse targets.
+const bciTrack = document.querySelector('#bci-track');
+const bciTarget = document.querySelector('#bci-target');
+const bciCursor = document.querySelector('#bci-cursor');
+const bciFocusButton = document.querySelector('#bci-focus-button');
+const bciStart = document.querySelector('#bci-start');
+const bciScore = document.querySelector('#bci-score');
+const bciFocus = document.querySelector('#bci-focus');
+const bciCombo = document.querySelector('#bci-combo');
+const bciTime = document.querySelector('#bci-time');
+const bciMeterFill = document.querySelector('#bci-meter-fill');
+const bciMessage = document.querySelector('#bci-message');
+const bciHint = document.querySelector('#bci-hint');
+let bciRunning = false;
+let bciFocusHeld = false;
+let bciCursorPosition = 10;
+let bciTargetPosition = 70;
+let bciFocusValue = 0;
+let bciScoreValue = 0;
+let bciComboValue = 0;
+let bciTimeValue = 30;
+let bciFrame = null;
+let bciTimer = null;
+let bciBestValue = 0;
+try { bciBestValue = Number(localStorage.getItem('bob-neuro-pulse-best') || 0); } catch (error) { /* Keep the default score. */ }
+
+function setBciFocus(held) {
+  bciFocusHeld = held;
+  bciFocusButton?.classList.toggle('is-active', held);
+  bciFocusButton?.setAttribute('aria-pressed', String(held));
+}
+
+function placeBciTarget() {
+  const minimum = Math.min(88, bciCursorPosition + 13);
+  bciTargetPosition = minimum + Math.random() * Math.max(4, 88 - minimum);
+  bciTarget.style.left = `${bciTargetPosition}%`;
+  bciTarget.classList.remove('is-hit');
+}
+
+function renderBci() {
+  if (!bciCursor || !bciTrack) return;
+  bciCursor.style.left = `${bciCursorPosition}%`;
+  bciFocus.textContent = Math.round(bciFocusValue);
+  bciMeterFill.style.width = `${bciFocusValue}%`;
+  bciCursor.classList.toggle('is-charged', bciFocusValue > 55);
+}
+
+function stopBciGame() {
+  bciRunning = false;
+  setBciFocus(false);
+  window.cancelAnimationFrame(bciFrame);
+  window.clearInterval(bciTimer);
+  bciFocusButton.disabled = true;
+  bciMessage.hidden = false;
+  bciMessage.textContent = `实验结束 · 得分 ${bciScoreValue}`;
+  bciHint.textContent = `最高连击 ${bciComboValue} · ${bciScoreValue > bciBestValue ? '新的个人纪录' : '继续练习稳定信号'}`;
+  bciStart.textContent = '再次启动';
+  if (bciScoreValue > bciBestValue) {
+    bciBestValue = bciScoreValue;
+    try { localStorage.setItem('bob-neuro-pulse-best', String(bciBestValue)); } catch (error) { /* Ignore file preview storage limits. */ }
+  }
+}
+
+function updateBci() {
+  if (!bciRunning) return;
+  const direction = bciFocusHeld ? 1 : -0.42;
+  bciFocusValue += bciFocusHeld ? 2.8 : -3.5;
+  bciFocusValue = Math.max(0, Math.min(100, bciFocusValue));
+  bciCursorPosition += direction * (0.12 + bciFocusValue / 900);
+  bciCursorPosition = Math.max(8, Math.min(92, bciCursorPosition));
+  if (bciFocusHeld && Math.abs(bciCursorPosition - bciTargetPosition) < 4.2) {
+    bciScoreValue += 1 + Math.floor(bciComboValue / 4);
+    bciComboValue += 1;
+    bciCursorPosition = 8;
+    bciScore.textContent = bciScoreValue;
+    bciCombo.textContent = bciComboValue;
+    bciTarget.classList.add('is-hit');
+    bciHint.textContent = `命中 · 连击 x${bciComboValue} · 继续保持专注`;
+    placeBciTarget();
+  } else if (!bciFocusHeld && bciComboValue > 0 && bciFocusValue < 8) {
+    bciComboValue = 0;
+    bciCombo.textContent = bciComboValue;
+    bciHint.textContent = '信号已松开 · 重新按住专注键';
+  }
+  renderBci();
+  bciFrame = window.requestAnimationFrame(updateBci);
+}
+
+function startBciGame() {
+  if (!bciTrack || bciRunning) return;
+  bciRunning = true;
+  bciScoreValue = 0;
+  bciComboValue = 0;
+  bciTimeValue = 30;
+  bciCursorPosition = 10;
+  bciFocusValue = 0;
+  bciScore.textContent = '0';
+  bciCombo.textContent = '0';
+  bciTime.textContent = '30';
+  bciMessage.hidden = true;
+  bciFocusButton.disabled = false;
+  bciStart.textContent = '实验进行中';
+  bciHint.textContent = '按住专注键，让光标对准黄色脉冲';
+  placeBciTarget();
+  window.clearInterval(bciTimer);
+  bciTimer = window.setInterval(() => {
+    bciTimeValue -= 1;
+    bciTime.textContent = bciTimeValue;
+    if (bciTimeValue <= 0) stopBciGame();
+  }, 1000);
+  window.cancelAnimationFrame(bciFrame);
+  bciFrame = window.requestAnimationFrame(updateBci);
+}
+
+if (bciStart && bciFocusButton) {
+  bciStart.addEventListener('click', startBciGame);
+  bciFocusButton.addEventListener('pointerdown', () => setBciFocus(true));
+  ['pointerup', 'pointercancel', 'pointerleave'].forEach((eventName) => bciFocusButton.addEventListener(eventName, () => setBciFocus(false)));
+  bciFocusButton.addEventListener('keydown', (event) => {
+    if (event.code !== 'Space') return;
+    event.preventDefault();
+    setBciFocus(true);
+  });
+  bciFocusButton.addEventListener('keyup', (event) => {
+    if (event.code === 'Space') setBciFocus(false);
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.code !== 'Space' || event.repeat || !bciRunning || document.activeElement === bciFocusButton) return;
+    const tagName = document.activeElement?.tagName;
+    if (['INPUT', 'TEXTAREA', 'SELECT'].includes(tagName)) return;
+    event.preventDefault();
+    setBciFocus(true);
+  });
+  document.addEventListener('keyup', (event) => {
+    if (event.code === 'Space') setBciFocus(false);
+  });
+}
+
+// BCI defense game: charge and release a pulse while an interference wave crosses the hit zone.
+const defenseTrack = document.querySelector('#defense-track');
+const defenseTarget = document.querySelector('#defense-target');
+const defensePulse = document.querySelector('#defense-pulse');
+const defenseFocusButton = document.querySelector('#defense-focus');
+const defenseStart = document.querySelector('#defense-start');
+const defenseScore = document.querySelector('#defense-score');
+const defenseStability = document.querySelector('#defense-stability');
+const defenseWave = document.querySelector('#defense-wave');
+const defenseCombo = document.querySelector('#defense-combo');
+const defenseTime = document.querySelector('#defense-time');
+const defenseMeterFill = document.querySelector('#defense-meter-fill');
+const defenseMessage = document.querySelector('#defense-message');
+const defenseHint = document.querySelector('#defense-hint');
+let defenseRunning = false;
+let defenseFocusHeld = false;
+let defenseCharge = 0;
+let defenseTargetPosition = 86;
+let defenseScoreValue = 0;
+let defenseStabilityValue = 100;
+let defenseWaveValue = 1;
+let defenseComboValue = 0;
+let defenseHitCount = 0;
+let defenseTimeValue = 25;
+let defenseFrame = null;
+let defenseTimer = null;
+let defenseBestValue = 0;
+try { defenseBestValue = Number(localStorage.getItem('bob-neuro-defense-best') || 0); } catch (error) { /* Keep the default score. */ }
+
+function renderDefense() {
+  defenseTarget.style.left = `${defenseTargetPosition}%`;
+  defenseMeterFill.style.width = `${defenseCharge}%`;
+  defenseStability.textContent = defenseStabilityValue;
+  defenseWave.textContent = defenseWaveValue;
+  defenseCombo.textContent = defenseComboValue;
+  defenseTarget.classList.toggle('is-in-zone', defenseTargetPosition >= 38 && defenseTargetPosition <= 58);
+}
+
+function setDefenseFocus(held) {
+  if (!defenseRunning) return;
+  defenseFocusHeld = held;
+  defenseFocusButton.classList.toggle('is-active', held);
+  defenseFocusButton.setAttribute('aria-pressed', String(held));
+}
+
+function resetDefenseTarget() {
+  defenseTargetPosition = 88;
+  defenseTarget.classList.remove('is-hit', 'is-missed');
+  renderDefense();
+}
+
+function fireDefensePulse() {
+  if (!defenseRunning || !defenseFocusHeld) return;
+  setDefenseFocus(false);
+  defensePulse.classList.remove('is-fired');
+  void defensePulse.offsetWidth;
+  defensePulse.classList.add('is-fired');
+  const inHitZone = defenseTargetPosition >= 38 && defenseTargetPosition <= 58;
+  if (inHitZone && defenseCharge >= 55) {
+    defenseHitCount += 1;
+    defenseComboValue += 1;
+    defenseScoreValue += 10 + defenseWaveValue * 2 + Math.max(0, defenseComboValue - 1) * 2;
+    defenseStabilityValue = Math.min(100, defenseStabilityValue + 3);
+    defenseTarget.classList.add('is-hit');
+    defenseMessage.textContent = `命中 · 连击 x${defenseComboValue}`;
+    defenseHint.textContent = `脉冲命中 +${10 + defenseWaveValue * 2 + Math.max(0, defenseComboValue - 1) * 2} 分 · 再命中 ${3 - (defenseHitCount % 3 || 3)} 次升波`;
+    if (defenseHitCount % 3 === 0) {
+      defenseWaveValue = Math.min(9, defenseWaveValue + 1);
+      defenseHint.textContent = `波次 ${defenseWaveValue} · 干扰速度提升，继续保持连击。`;
+    }
+    window.setTimeout(resetDefenseTarget, 240);
+  } else {
+    defenseComboValue = 0;
+    defenseStabilityValue = Math.max(0, defenseStabilityValue - (inHitZone ? 6 : 12));
+    defenseTarget.classList.add('is-missed');
+    defenseMessage.textContent = inHitZone ? '脉冲不足 · 充能至少 55%' : '错过命中区 · 干扰波穿透';
+    defenseHint.textContent = '按住充能，等目标落入绿色区域再松开。';
+    window.setTimeout(resetDefenseTarget, 240);
+    if (defenseStabilityValue <= 0) endDefenseGame();
+  }
+  defenseCharge = 0;
+  defenseScore.textContent = defenseScoreValue;
+  renderDefense();
+}
+
+function endDefenseGame() {
+  defenseRunning = false;
+  defenseFocusHeld = false;
+  window.cancelAnimationFrame(defenseFrame);
+  window.clearInterval(defenseTimer);
+  defenseFocusButton.disabled = true;
+  defenseFocusButton.classList.remove('is-active');
+  defenseMessage.textContent = defenseStabilityValue > 0 ? `防守完成 · 得分 ${defenseScoreValue}` : '信号核心失守';
+  defenseHint.textContent = defenseScoreValue > defenseBestValue ? '新的最高分 · 核心信号保持在线。' : '再试一次，把释放时机卡在绿色区域。';
+  defenseStart.textContent = '再次防守';
+  if (defenseScoreValue > defenseBestValue) {
+    defenseBestValue = defenseScoreValue;
+    try { localStorage.setItem('bob-neuro-defense-best', String(defenseBestValue)); } catch (error) { /* Ignore file preview storage limits. */ }
+  }
+}
+
+function updateDefense() {
+  if (!defenseRunning) return;
+  defenseCharge += defenseFocusHeld ? 2.9 : -4.5;
+  defenseCharge = Math.max(0, Math.min(100, defenseCharge));
+  defenseTargetPosition -= 0.06 + defenseWaveValue * 0.008;
+  if (defenseTargetPosition <= 14) {
+    defenseStabilityValue = Math.max(0, defenseStabilityValue - 15);
+    defenseComboValue = 0;
+    defenseMessage.textContent = '干扰波撞击核心 · 稳定度下降';
+    defenseHint.textContent = '不要让红色干扰波穿过左侧核心。';
+    resetDefenseTarget();
+    if (defenseStabilityValue <= 0) {
+      endDefenseGame();
+      return;
+    }
+  }
+  renderDefense();
+  defenseFrame = window.requestAnimationFrame(updateDefense);
+}
+
+function startDefenseGame() {
+  if (!defenseTrack || defenseRunning) return;
+  defenseRunning = true;
+  defenseCharge = 0;
+  defenseTargetPosition = 88;
+  defenseScoreValue = 0;
+  defenseStabilityValue = 100;
+  defenseWaveValue = 1;
+  defenseComboValue = 0;
+  defenseHitCount = 0;
+  defenseTimeValue = 25;
+  defenseScore.textContent = '0';
+  defenseStability.textContent = '100';
+  defenseWave.textContent = '1';
+  defenseCombo.textContent = '0';
+  defenseTime.textContent = '25';
+  defenseMessage.textContent = '干扰波接近 · 准备充能';
+  defenseHint.textContent = '按住充能，等目标进入绿色区域后松开。';
+  defenseFocusButton.disabled = false;
+  defenseStart.textContent = '防守进行中';
+  renderDefense();
+  window.clearInterval(defenseTimer);
+  defenseTimer = window.setInterval(() => {
+    defenseTimeValue -= 1;
+    defenseTime.textContent = defenseTimeValue;
+    if (defenseTimeValue <= 0) endDefenseGame();
+  }, 1000);
+  window.cancelAnimationFrame(defenseFrame);
+  defenseFrame = window.requestAnimationFrame(updateDefense);
+}
+
+if (defenseStart && defenseFocusButton) {
+  defenseStart.addEventListener('click', startDefenseGame);
+  defenseFocusButton.addEventListener('pointerdown', () => setDefenseFocus(true));
+  ['pointerup', 'pointercancel', 'pointerleave'].forEach((eventName) => defenseFocusButton.addEventListener(eventName, fireDefensePulse));
+  defenseFocusButton.addEventListener('keydown', (event) => {
+    if (event.code !== 'Space') return;
+    event.preventDefault();
+    setDefenseFocus(true);
+  });
+  defenseFocusButton.addEventListener('keyup', (event) => {
+    if (event.code === 'Space') fireDefensePulse();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.code !== 'Space' || event.repeat || !defenseRunning || document.activeElement === defenseFocusButton) return;
+    const tagName = document.activeElement?.tagName;
+    if (['INPUT', 'TEXTAREA', 'SELECT'].includes(tagName)) return;
+    event.preventDefault();
+    setDefenseFocus(true);
+  });
+  document.addEventListener('keyup', (event) => {
+    if (event.code === 'Space' && defenseRunning && document.activeElement !== defenseFocusButton) fireDefensePulse();
+  });
+}
+
 const log = document.querySelector('#chat-log');
 const form = document.querySelector('#chat-form');
 const input = document.querySelector('#chat-input');
 const transmissionStatus = document.querySelector('#transmission-status');
+const messageModeToggle = document.querySelector('#message-mode-toggle');
+const messageModeLabel = messageModeToggle.querySelector('[data-message-label]');
+const messageModeNote = messageModeToggle.querySelector('[data-message-note]');
+const chatFormLabel = form.querySelector('label');
+const chatSendButton = form.querySelector('.send-button');
 const publishedQuestions = [];
 let publishedQuestionsPromise = null;
+let messageMode = false;
+
+function updateMessageModeUi() {
+  const labelKey = messageMode ? 'chat.messageCancel' : 'chat.messageTitle';
+  const noteKey = messageMode ? 'chat.messageCancelNote' : 'chat.messageNote';
+  const placeholderKey = messageMode ? 'chat.messagePlaceholder' : 'chat.placeholder';
+  const inputLabelKey = messageMode ? 'chat.messageLabel' : 'chat.label';
+  messageModeToggle.setAttribute('aria-pressed', String(messageMode));
+  messageModeLabel.dataset.i18n = labelKey;
+  messageModeNote.dataset.i18n = noteKey;
+  messageModeLabel.textContent = copy[currentLanguage][labelKey];
+  messageModeNote.textContent = copy[currentLanguage][noteKey];
+  input.dataset.i18nPlaceholder = placeholderKey;
+  input.placeholder = copy[currentLanguage][placeholderKey];
+  chatFormLabel.dataset.i18n = inputLabelKey;
+  chatFormLabel.textContent = copy[currentLanguage][inputLabelKey];
+  chatSendButton.setAttribute('aria-label', messageMode ? copy[currentLanguage]['chat.messageTitle'] : copy[currentLanguage]['chat.label']);
+  chatSendButton.setAttribute('title', messageMode ? copy[currentLanguage]['chat.messageTitle'] : copy[currentLanguage]['chat.label']);
+  form.classList.toggle('is-message-mode', messageMode);
+  if (!input.disabled) setTransmissionStatus(messageMode ? 'chat.messageReady' : 'chat.ready');
+}
+
+messageModeToggle.addEventListener('click', () => {
+  messageMode = !messageMode;
+  updateMessageModeUi();
+  input.focus();
+});
 
 function normalizeQuestion(value) {
   return String(value || '').toLowerCase().replace(/[？?，,。！!：:；;、'"“”‘’()（）\[\]【】\s]/g, '');
@@ -963,7 +1330,7 @@ function finishTransmission(item, onComplete) {
   input.focus();
   if (onComplete) onComplete();
   window.setTimeout(() => {
-    if (!input.disabled) setTransmissionStatus('chat.ready');
+    if (!input.disabled) setTransmissionStatus(messageMode ? 'chat.messageReady' : 'chat.ready');
   }, 1400);
 }
 
@@ -995,39 +1362,58 @@ function addQuestionAction(question, failed = false) {
   log.scrollTop = log.scrollHeight;
 }
 
-async function submitUnknownQuestion(question, action) {
+async function postTwinInboxMessage(message, version = 'V3') {
   const backend = getFeedbackBackend();
-  if (!backend) {
-    action.remove();
-    receiveMessage(copy[currentLanguage]['chat.leaveConfig'], () => addQuestionAction(question, true));
-    return;
-  }
+  if (!backend) throw new Error('Twin inbox is not configured');
+  const response = await fetch(`${backend.url}/rest/v1/twin_questions`, {
+    method: 'POST',
+    headers: {
+      ...publicApiHeaders(backend, 'return=minimal'),
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      question: message.trim(),
+      language: currentLanguage,
+      version
+    }),
+    credentials: 'omit'
+  });
+  if (!response.ok) throw new Error(`Question request failed with status ${response.status}`);
+}
 
+async function submitUnknownQuestion(question, action) {
   const button = action.querySelector('button');
   button.disabled = true;
   button.dataset.i18n = 'chat.leaving';
   button.textContent = copy[currentLanguage]['chat.leaving'];
   try {
-    const response = await fetch(`${backend.url}/rest/v1/twin_questions`, {
-      method: 'POST',
-      headers: {
-        ...publicApiHeaders(backend, 'return=minimal'),
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        question: question.trim(),
-        language: currentLanguage,
-        version: 'V3'
-      }),
-      credentials: 'omit'
-    });
-    if (!response.ok) throw new Error(`Question request failed with status ${response.status}`);
+    await postTwinInboxMessage(question);
     action.remove();
     receiveMessage(copy[currentLanguage]['chat.left']);
   } catch (error) {
     console.error('Twin question submission failed:', error.message);
     action.remove();
-    receiveMessage(copy[currentLanguage]['chat.leaveError'], () => addQuestionAction(question, true));
+    const key = error.message === 'Twin inbox is not configured' ? 'chat.leaveConfig' : 'chat.leaveError';
+    receiveMessage(copy[currentLanguage][key], () => addQuestionAction(question, true));
+  }
+}
+
+async function submitDirectMessage(message) {
+  const normalized = message.trim();
+  if (!normalized || input.disabled) return;
+  addMessage(normalized, 'user');
+  input.disabled = true;
+  setTransmissionStatus('chat.messageSending', true);
+  try {
+    await postTwinInboxMessage(normalized, 'V3_MESSAGE');
+    receiveMessage(copy[currentLanguage]['chat.messageLeft'], () => {
+      messageMode = false;
+      updateMessageModeUi();
+    });
+  } catch (error) {
+    console.error('Twin message submission failed:', error.message);
+    const key = error.message === 'Twin inbox is not configured' ? 'chat.leaveConfig' : 'chat.leaveError';
+    receiveMessage(copy[currentLanguage][key]);
   }
 }
 
@@ -1050,9 +1436,10 @@ async function reply(question, questionId) {
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
-  const question = input.value;
+  const content = input.value;
   input.value = '';
-  reply(question);
+  if (messageMode) submitDirectMessage(content);
+  else reply(content);
 });
 
 document.querySelectorAll('[data-question-id]').forEach((button) => {
@@ -1086,6 +1473,7 @@ function setLanguage(language) {
   feedbackCloseButton.setAttribute('aria-label', language === 'zh' ? '关闭反馈表单' : 'Close feedback form');
   feedbackCloseButton.setAttribute('title', language === 'zh' ? '关闭' : 'Close');
   setFeedbackState(feedbackStatus.dataset.state || 'ready');
+  updateMessageModeUi();
   updatePageNavigationLabels();
   setMotion(paused);
   try { localStorage.setItem('bob-homepage-language', language); } catch (error) { /* File previews may disable storage. */ }
