@@ -1442,8 +1442,31 @@ async function reply(question, questionId) {
   if (!normalized || input.disabled) return;
   addMessage(normalized, 'user');
   input.disabled = true;
-  if (/贾玲|jl|热辣/i.test(normalized)) {
-    receiveMessage('贾玲是甲沟炎的妹妹，精灵城上精灵舞，贾玲家里举哑铃。');
+  const portraitPhoto = normalized.includes('陈绪晟');
+  const partyPhoto = /阿宝|贾玲|热辣/.test(normalized);
+  const volleyballPhoto = /郭若熹|黑人/.test(normalized);
+  const fixedReply = partyPhoto || /jl/i.test(normalized);
+  const outdoorPhoto = normalized.includes('付泓元');
+  if (portraitPhoto || fixedReply || volleyballPhoto || outdoorPhoto) {
+    const images = [];
+    if (portraitPhoto) images.push(['twin-portrait.jpg', '人物照片', 'Portrait photo']);
+    if (partyPhoto) images.push(['twin-party.jpg', '彩色灯光下的照片', 'Photo under colorful lights']);
+    if (volleyballPhoto) images.push(['twin-volleyball.jpg', '排球场照片', 'Volleyball court photo']);
+    if (outdoorPhoto) images.push(['twin-outdoor.jpg', '户外照片', 'Outdoor photo']);
+    const caption = currentLanguage === 'zh' ? '这是相关照片。' : 'Here is the related photo.';
+    receiveMessage(portraitPhoto ? 'tyr的boyfriend' : fixedReply ? '贾玲是甲沟炎的妹妹，精灵城上精灵舞，贾玲家里举哑铃。' : caption, () => {
+      const message = log.lastElementChild.querySelector('p');
+      let previous = message;
+      for (const [file, zh, en] of images) {
+        const image = document.createElement('img');
+        image.alt = currentLanguage === 'zh' ? zh : en;
+        image.style.cssText = 'display:block;max-width:min(100%, 320px);height:auto;margin-top:8px;border-radius:8px';
+        image.addEventListener('load', () => { log.scrollTop = log.scrollHeight; }, { once: true });
+        image.src = './' + file;
+        previous.after(image);
+        previous = image;
+      }
+    });
     return;
   }
   setTransmissionStatus('chat.searching', true);
@@ -1456,7 +1479,15 @@ async function reply(question, questionId) {
   if (result?.status === 'answered' && typeof result.answer === 'string' && result.answer.trim()) {
     twinHistory.push(normalized + '\n' + result.answer);
     if (twinHistory.length > 2) twinHistory.shift();
-    receiveMessage(result.answer);
+    const campusQuestion = /学校|校园|校区|学院|天津大学|香港理工|哪所大学|在哪.*读书|在哪.*上学|(?:your|bob['’]s) (?:school|campus|university)|which (?:school|university)|where (?:do you|does bob) study|tianjin university|polyu/i.test(normalized);
+    receiveMessage(result.answer, campusQuestion ? () => {
+      const image = document.createElement('img');
+      image.alt = language === 'zh' ? '校园沙盘模型' : 'Campus scale model';
+      image.style.cssText = 'display:block;max-width:min(100%, 320px);height:auto;margin-top:8px;border-radius:8px';
+      image.addEventListener('load', () => { log.scrollTop = log.scrollHeight; }, { once: true });
+      image.src = './twin-campus.jpg';
+      log.lastElementChild.querySelector('p').after(image);
+    } : undefined);
     return;
   }
   const unknown = result?.status === 'unknown';
