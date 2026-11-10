@@ -29,8 +29,8 @@ const copy = {
     'timeline.item3Title': 'V2 增加内容与动态', 'timeline.item3Desc': '上线双语切换、成长目标、学习时间线、邮箱入口和更完整的数字分身问答。',
     'timeline.item4Title': 'V3 建立反馈闭环', 'timeline.item4Desc': '加入私密反馈表单，完成字段校验、提交状态和重复点击保护；用 Supabase RLS 限制公开端只能提交，桌面与手机端到端验收通过，本地记录仍等待线上发布后的复核。',
     'timeline.item5Title': '把反馈变成下一轮改进', 'timeline.item5Desc': '发布后继续核对线上资源、导航和反馈链路，再根据真实访客的反馈决定下一步。',
-    'twin.title': '建立通讯', 'twin.intro': '它只根据我愿意公开的真实资料回答。遇到暂时不会的问题，你可以把问题留给我，等我回复后继续扩充数字分身。',
-    'twin.welcome': '信号已接通。我是 Bob 的数字分身。关于他的学习、AI 起点、目标和兴趣，我都可以回答。', 'twin.source': '本地资料 + 已发布问答',
+    'twin.title': '建立通讯', 'twin.intro': '可以问 Bob 的公开经历，也可以问常识问题。未匹配的问题和最近两轮对话可能发送给 DeepSeek 生成回复。给 Bob 的私密留言通过独立通道提交。',
+    'twin.welcome': '信号已接通。我是 Bob 的数字分身。关于他的学习、AI 起点、目标和兴趣，我都可以回答。', 'twin.source': '公开资料 + AI',
     'english.title': '把“没听懂”，<br>变成下一次能复述。', 'english.intro': '这里将记录全英文课堂中的生词、知识链和复盘方法。目前先搭好学习工作流，后续逐步补充真实课堂笔记。',
     'english.previewTitle': '课前建立词汇坐标', 'english.previewBody': '预览核心术语、章节结构与可能出现的逻辑关系，先降低课堂中的语言负担。',
     'english.captureTitle': '课堂抓住知识主线', 'english.captureBody': '优先记录老师的论证顺序、关键图示和没听懂的节点，不追求逐字翻译。',
@@ -108,8 +108,8 @@ const copy = {
     'timeline.item3Title': 'V2 adds context and motion', 'timeline.item3Desc': 'Added bilingual content, first-year goals, a learning timeline, email access and richer digital-twin answers.',
     'timeline.item4Title': 'V3 closes the feedback loop', 'timeline.item4Desc': 'Added a private feedback form with validation, submission states and duplicate-click protection. Supabase RLS limits the public client to inserts only; desktop and mobile acceptance passed locally, with an online recheck still pending after release.',
     'timeline.item5Title': 'Turn feedback into the next iteration', 'timeline.item5Desc': 'After release, recheck online assets, navigation and the feedback path, then let real visitor feedback decide what comes next.',
-    'twin.title': 'Open a channel', 'twin.intro': 'It answers only from facts I have chosen to make public. If it cannot answer yet, you can leave the question for me and help expand the twin after I reply.',
-    'twin.welcome': 'Signal connected. I am Bob\'s digital twin. Ask me about his studies, AI starting point, goals or interests.', 'twin.source': 'LOCAL + PUBLISHED ANSWERS',
+    'twin.title': 'Open a channel', 'twin.intro': 'Ask about Bob or ask a general knowledge question. Unmatched questions and up to two recent turns may be sent to DeepSeek. Private messages to Bob use a separate channel.',
+    'twin.welcome': 'Signal connected. I am Bob\'s digital twin. Ask me about his studies, AI starting point, goals or interests.', 'twin.source': 'PUBLIC KNOWLEDGE + AI',
     'english.title': 'Turn “I missed it”<br>into “I can explain it.”', 'english.intro': 'This page will collect vocabulary, reasoning chains and review methods from English-medium classes. The workflow comes first; real class notes will follow.',
     'english.previewTitle': 'Map vocabulary before class', 'english.previewBody': 'Preview core terms, chapter structure and likely relationships to reduce the language load during class.',
     'english.captureTitle': 'Catch the main thread in class', 'english.captureBody': 'Record the reasoning order, key diagrams and unclear moments instead of translating every sentence.',
@@ -1261,7 +1261,8 @@ async function loadPublishedQuestions(force = false) {
       const endpoint = `${backend.url}/rest/v1/twin_questions?select=${fields}&status=eq.published&order=updated_at.desc&limit=200`;
       const response = await fetch(endpoint, {
         headers: publicApiHeaders(backend),
-        credentials: 'omit'
+        credentials: 'omit',
+        signal: AbortSignal.timeout(5000)
       });
       if (!response.ok) throw new Error(`Knowledge request failed with status ${response.status}`);
       const rows = await response.json();
@@ -1417,6 +1418,25 @@ async function submitDirectMessage(message) {
   }
 }
 
+const twinHistory = [];
+
+async function requestModelAnswer(question, language) {
+  const backend = getFeedbackBackend();
+  if (!backend) return { status: 'unavailable' };
+  try {
+    const response = await fetch(backend.url + '/functions/v1/twin-answer', {
+      method: 'POST',
+      headers: { ...publicApiHeaders(backend), 'Content-Type': 'application/json' },
+      body: JSON.stringify({ question, language, history: twinHistory }),
+      signal: AbortSignal.timeout(15000),
+      credentials: 'omit'
+    });
+    return response.ok ? await response.json() : { status: 'unavailable' };
+  } catch {
+    return { status: 'unavailable' };
+  }
+}
+
 async function reply(question, questionId) {
   const normalized = question.trim();
   if (!normalized || input.disabled) return;
@@ -1424,14 +1444,23 @@ async function reply(question, questionId) {
   input.disabled = true;
   setTransmissionStatus('chat.searching', true);
   await loadPublishedQuestions();
-  const answer = findAnswer(normalized, questionId);
-  window.setTimeout(() => {
-    if (answer) {
-      receiveMessage(answer);
-      return;
-    }
-    receiveMessage(copy[currentLanguage]['chat.unknown'], () => addQuestionAction(normalized));
-  }, reducedMotion.matches || paused ? 0 : 420);
+  const language = currentLanguage;
+  const localAnswer = findAnswer(normalized, questionId);
+  const result = localAnswer
+    ? { status: 'answered', answer: localAnswer }
+    : await requestModelAnswer(normalized, language);
+  if (result?.status === 'answered' && typeof result.answer === 'string' && result.answer.trim()) {
+    twinHistory.push(normalized + '\n' + result.answer);
+    if (twinHistory.length > 2) twinHistory.shift();
+    receiveMessage(result.answer);
+    return;
+  }
+  const unknown = result?.status === 'unknown';
+  const unavailable = currentLanguage === 'zh'
+    ? 'AI 暂时不可用。你可以稍后重试，或把问题留给 Bob。'
+    : 'AI is temporarily unavailable. Try again later or leave your question for Bob.';
+  receiveMessage(unknown ? copy[currentLanguage]['chat.unknown'] : unavailable,
+    () => addQuestionAction(normalized));
 }
 
 form.addEventListener('submit', (event) => {

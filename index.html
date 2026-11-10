@@ -275,9 +275,9 @@
 
     <section id="twin" class="section-band twin-section page-panel" aria-labelledby="twin-title" data-section-root="twin" data-page-id="twin">
       <div class="section-inner twin-layout">
-        <div class="twin-copy"><p class="eyebrow">DIGITAL TWIN / CHANNEL 04</p><h2 id="twin-title" data-i18n="twin.title">建立通讯</h2><p data-i18n="twin.intro">它只根据我愿意公开的真实资料回答。问问我为什么开始学 AI、英文课堂最难的是什么，或者大一的目标。</p><div class="frequency" aria-label="通讯状态"><span>FREQ.</span><b>93.7 MHz</b><i></i><em>CONNECTED</em></div></div>
+        <div class="twin-copy"><p class="eyebrow">DIGITAL TWIN / CHANNEL 04</p><h2 id="twin-title" data-i18n="twin.title">建立通讯</h2><p data-i18n="twin.intro">可以问 Bob 的公开经历，也可以问常识问题。未匹配的问题和最近两轮对话可能发送给 DeepSeek 生成回复。给 Bob 的私密留言通过独立通道提交。</p><div class="frequency" aria-label="通讯状态"><span>FREQ.</span><b>93.7 MHz</b><i></i><em>CONNECTED</em></div></div>
         <div class="terminal" role="region" aria-label="数字分身聊天终端">
-          <div class="terminal-bar"><span><i></i> BOB_TWIN</span><span>LOCAL KNOWLEDGE / NO UPLOAD</span></div>
+          <div class="terminal-bar"><span><i></i> BOB_TWIN</span><span data-i18n="twin.source">公开资料 + AI</span></div>
           <div id="chat-log" class="chat-log" aria-live="polite"><div class="message message-twin"><span class="message-avatar">BM</span><div><p data-i18n="twin.welcome">信号已接通。我是 Bob 的数字分身。关于他的学习、AI 起点、目标和兴趣，我都可以回答。</p><time data-i18n="chat.now">刚刚</time></div></div></div>
           <div class="transmission-status" id="transmission-status" aria-live="polite"><span></span><b data-i18n="chat.ready">通讯频道就绪</b><i></i><i></i><i></i></div>
           <div class="suggestions" aria-label="常见问题">
@@ -362,6 +362,6 @@
     <span>© 2026 / EARTH</span>
   </footer>
   <script src="supabase-config.js"></script>
-  <script src="personal-homepage-v1.js"></script>
+  <script src="personal-homepage-v1.js?v=twin-ai-1"></script>
 </body>
 </html>
