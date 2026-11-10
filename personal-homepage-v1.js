@@ -161,9 +161,9 @@ const copy = {
 
 const questionBank = {
   identity: {
-    zh: 'Bob 是天津大学与香港理工大学合作办学项目中的大一学生，目前探索智能医学工程、脑机接口相关方向和 AI 应用。',
-    en: 'Bob is a freshman in a joint educational program between Tianjin University and PolyU, currently exploring intelligent medical engineering, BCI-related directions and AI applications.',
-    keywords: ['你是谁', '身份', '学校', '专业', '方向', 'who are you', 'identity', 'school', 'major']
+    zh: '嗨，我是 Bob！我现在还是个学生，平时喜欢玩。',
+    en: 'Hey, I’m Bob! I’m a student, and I like to have fun in my free time.',
+    keywords: ['你是谁', '自我介绍', '介绍一下你自己', 'tell me about yourself', '身份', '学校', '专业', '方向', 'who are you', 'identity', 'school', 'major']
   },
   aiStart: {
     zh: '一次偶然的机会，Bob 听说同学只用自然语言就让 AI 做出了很厉害的程序。那种让想法快速成为作品的可能性，让他开始认真接触 AI。',
@@ -1442,6 +1442,10 @@ async function reply(question, questionId) {
   if (!normalized || input.disabled) return;
   addMessage(normalized, 'user');
   input.disabled = true;
+  if (/贾玲|jl|热辣/i.test(normalized)) {
+    receiveMessage('贾玲是甲沟炎的妹妹，精灵城上精灵舞，贾玲家里举哑铃。');
+    return;
+  }
   setTransmissionStatus('chat.searching', true);
   await loadPublishedQuestions();
   const language = currentLanguage;
